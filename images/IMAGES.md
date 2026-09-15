@@ -61,7 +61,7 @@ PNG or WebP also work — update the `src` paths in `index.html` if you change e
 | `22-pool-header-icons.jpg` | Optional: Billiards header row with all 15 ball icons — green check on sunk, red X on scratched. |
 | `23-pool-cue-stand.jpg` | Optional: standing on the cue with purple sight + cue-stick power slider visible. |
 | `17-bowling-scoreboard.jpg` | Bowling scoreboard with multiplayer roster / turn marker. |
-| `18-no-weapon-zone.jpg` | Yellow GameOPS grid at **Nav OPS** — standing on the visible yellow floor pattern with weapons blocked (balloon or empty hands cue). |
+| `18-no-weapon-zone.jpg` | Yellow GameOPS grid at **NavOPSEast** during a live BaffleShots match — visible yellow floor pattern, weapons blocked, ocean ships smoking. |
 
 ---
 

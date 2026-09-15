@@ -167,7 +167,23 @@
     @media (min-width: 640px) {
       .fig-grid--2 { grid-template-columns: 1fr 1fr; }
       .fig-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
+      .fig-grid--4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
     }
+
+    .quest-strip-stack {
+      position: relative;
+      aspect-ratio: 1;
+      background: #0a1018;
+    }
+    .quest-strip-stack img {
+      position: absolute;
+      inset: 14%;
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+    }
+    .quest-strip-ring { z-index: 1; }
+    .quest-strip-icon { z-index: 2; }
 
     .table-wrap { overflow-x: auto; margin: 1rem 0; }
     table {
@@ -655,6 +671,8 @@
       <h3 id="direction-indicators">Direction indicators (under the compass)</h3>
       <p>
         Below the compass, up to <strong>four sliding icons</strong> show where something important is on the map.
+        Quest-item icons appear <strong>clockwise in the order you collect them</strong> (bowl, then propeller, then duck raft).
+        <strong>FlipChip</strong> uses the same band but is <strong>not</strong> a quest item — it points at the Checkers coin while it is in the world.
         Each icon moves left or right on the band to match compass bearing — center means straight ahead.
         Icons <strong>grow larger when you are close</strong> and <strong>shrink as you move away</strong> (about full size near 1&nbsp;m, smallest around 1&nbsp;km).
         If the target is far behind you, its icon hides until you turn back toward it.
@@ -671,13 +689,47 @@
         </table>
       </div>
       <p>
+        Each icon sits in a matching <strong>bracket ring</strong> (two half-circles). The ring stays the same size;
+        the icon grows as you get closer and shrinks as you move away.
+      </p>
+      <div class="fig-grid fig-grid--4">
+        <figure>
+          <div class="quest-strip-stack">
+            <img class="quest-strip-ring" src="images/orangeBracketRing.png" alt="">
+            <img class="quest-strip-icon" src="images/orangeCageBowl.png" alt="Orange cage bowl">
+          </div>
+          <figcaption>Cage Bowl — orange</figcaption>
+        </figure>
+        <figure>
+          <div class="quest-strip-stack">
+            <img class="quest-strip-ring" src="images/blueBracketRing.png" alt="">
+            <img class="quest-strip-icon" src="images/blueCagePropeller.png" alt="Blue cage propeller">
+          </div>
+          <figcaption>Propeller — blue</figcaption>
+        </figure>
+        <figure>
+          <div class="quest-strip-stack">
+            <img class="quest-strip-ring" src="images/yellowBracketRing.png" alt="">
+            <img class="quest-strip-icon" src="images/yellowDuckRaft.png" alt="Yellow duck raft">
+          </div>
+          <figcaption>Duck Raft — yellow</figcaption>
+        </figure>
+        <figure>
+          <div class="quest-strip-stack">
+            <img class="quest-strip-ring" src="images/redBracketRing.png" alt="">
+            <img class="quest-strip-icon" src="images/FlipChipIcon.png" alt="Red FlipChip">
+          </div>
+          <figcaption>FlipChip — red (not a quest item)</figcaption>
+        </figure>
+      </div>
+      <figure>
+        <img src="images/36-direction-indicators.jpg" alt="Compass direction icons clockwise in collect order: bowl, propeller, duck raft, plus FlipChip" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Direction indicators in the HUD — quest items clockwise in the order you get them; FlipChip is included but is not a quest item</figcaption>
+      </figure>
+      <p>
         The three quest icons can also <strong>pulse</strong> when <strong>SoundSight</strong> hears their treasure chime.
         The <strong>DetPack</strong> and ammo crates use the <strong>top inventory row</strong> only — there is no compass direction icon for them.
       </p>
-      <figure>
-        <img src="images/36-direction-indicators.jpg" alt="Four direction indicator icons under the compass — bowl, propeller, duck raft, and FlipChip" loading="lazy" onerror="this.classList.add('missing')">
-        <figcaption>Direction indicators — <code>36-direction-indicators.jpg</code> (optional; crop under compass showing one or more icons)</figcaption>
-      </figure>
 
       <div class="fig-grid fig-grid--2">
         <figure>
@@ -739,22 +791,37 @@
     <!-- MINIGAMES SHARED -->
     <section id="minigames">
       <h2>Mini-games — shared lobby &amp; turns</h2>
+      <h3>Yellow GameOPS zone</h3>
       <p>
-        Pool, Bowling, <strong>Tetris</strong>, and <strong>Checkers</strong> use a <strong>stand-in zone</strong> (trigger volume). While your cage is inside:
+        Every GameOPS terminal sits on a <strong>yellow grid</strong>.
+        Step onto it and that game’s UI turns on. Weapons do not fire —
+        mouse or gamepad clicks the terminal instead. Step off and combat works again.
       </p>
-      <ul>
-        <li>Weapons and <kbd>RMB</kbd> zoom are <strong>blocked</strong> (same idea as Nav OPS / Chess-Stele).</li>
-        <li>Clicks drive lobby UI instead of weapons.</li>
-        <li>Step outside to restore normal combat.</li>
-      </ul>
+      <p>
+        Same idea everywhere:
+        <strong>Nav OPS</strong>, <strong>Pool</strong>, <strong>Bowling</strong>,
+        <strong>Tetris OPS</strong>, and <strong>Checkers OPS</strong>.
+        <strong>Chess-Stele</strong> has <strong>two</strong> yellow pads — front and back.
+      </p>
+      <p>
+        Two extras (not the GameOPS menu):
+        <strong>Tetris Play Spot</strong> also turns weapons off, but that pad is for
+        <strong>moving pieces</strong>, not the OPS menu.
+        On the <strong>Checkers board</strong>, standing on a piece or looking down also
+        turns weapons off so hops can use <kbd>RMB</kbd>.
+      </p>
 
-      <h3>Multiplayer lobby (Host = Master Client)</h3>
+      <h3>Multiplayer lobby</h3>
+      <p>
+        <strong>Host</strong> is the player who started the room.
+        Only the host opens the lobby, changes mode, resets, and starts.
+      </p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Input</th><th>Who</th><th>Action</th></tr></thead>
           <tbody>
             <tr><td><kbd>Shift</kbd>+<kbd>LMB</kbd></td><td>Host only</td><td>Open a <strong>new game lobby</strong> (recruiting) — required before guests can join</td></tr>
-            <tr><td><kbd>RMB</kbd> or <strong>Join</strong> + <kbd>LMB</kbd></td><td>Guest</td><td><strong>Join</strong> while recruiting (inside <strong>PlayBilliardSwitchZone</strong>)</td></tr>
+            <tr><td><kbd>RMB</kbd> or <strong>Join</strong> + <kbd>LMB</kbd></td><td>Guest</td><td><strong>Join</strong> while recruiting (on the yellow grid at the pool table)</td></tr>
             <tr><td><kbd>LMB</kbd></td><td>Host only</td><td><strong>Start</strong> when players have joined</td></tr>
           </tbody>
         </table>
@@ -776,15 +843,15 @@
       </div>
 
       <figure>
-        <img src="images/18-no-weapon-zone.jpg" alt="Standing in a mini-game no-weapon zone" loading="lazy" onerror="this.classList.add('missing')">
-        <figcaption>No-weapon zone — <code>18-no-weapon-zone.jpg</code> (optional)</figcaption>
+        <img src="images/18-no-weapon-zone.jpg" alt="Yellow GameOPS zone at Nav OPS" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Yellow GameOPS zone at Nav OPS</figcaption>
       </figure>
     </section>
 
     <!-- POOL -->
     <section id="pool">
       <h2>Pool (15-Ball / 9-Ball)</h2>
-      <p>Stand in the <strong>PlayBilliardSwitchZone</strong>. Mode and short rules appear on the <strong>pool board</strong>.</p>
+      <p>Stand on the <strong>yellow grid</strong> at the table. Mode and short rules appear on the <strong>pool board</strong>.</p>
 
       <h3>Host controls</h3>
       <div class="table-wrap">
@@ -804,7 +871,7 @@
 
       <h3>Remote players</h3>
       <ul>
-        <li><kbd>RMB</kbd> (Recruiting) or <strong>Join</strong> + <kbd>LMB</kbd> — join only (must be inside <strong>PlayBilliardSwitchZone</strong>)</li>
+        <li><kbd>RMB</kbd> (Recruiting) or <strong>Join</strong> + <kbd>LMB</kbd> — join only (must be on the yellow grid at the table)</li>
         <li>Before host opens lobby — HUD: <em>Waiting for host to open lobby (LMB at pool switch)</em></li>
         <li>Cannot reset, change mode, or start (toast: <em>Host only — use RMB to join</em>)</li>
       </ul>
@@ -875,8 +942,8 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       </p>
       <div class="fig-grid fig-grid--2">
         <figure>
-          <img src="images/07-pool-zone-board.jpg" alt="Pool zone with pool board rules text" loading="lazy" onerror="this.classList.add('missing')">
-          <figcaption>Pool zone + board — <code>07-pool-zone-board.jpg</code></figcaption>
+          <img src="images/07-pool-zone-board.jpg" alt="Yellow GameOPS zone at the pool table" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>Yellow GameOPS zone at the pool table</figcaption>
         </figure>
         <figure>
           <img src="images/16-pool-lobby-recruiting.jpg" alt="Pool board recruiting lobby text" loading="lazy" onerror="this.classList.add('missing')">
@@ -888,7 +955,7 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
     <!-- BOWLING -->
     <section id="bowling">
       <h2>Big Dumb Bowling</h2>
-      <p>Stand in the <strong>PlayBowlingSwitchZone</strong>.</p>
+      <p>Stand on the <strong>yellow grid</strong> at the lane.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Input</th><th>Who</th><th>Action</th></tr></thead>
@@ -906,8 +973,8 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       </p>
       <div class="fig-grid fig-grid--2">
         <figure>
-          <img src="images/08-bowling-zone.jpg" alt="Bowling switch zone at the lane" loading="lazy" onerror="this.classList.add('missing')">
-          <figcaption>Bowling zone — <code>08-bowling-zone.jpg</code></figcaption>
+          <img src="images/08-bowling-zone.jpg" alt="Yellow GameOPS zone at the bowling lane" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>Yellow GameOPS zone at the lane</figcaption>
         </figure>
         <figure>
           <img src="images/17-bowling-scoreboard.jpg" alt="Bowling scoreboard with roster" loading="lazy" onerror="this.classList.add('missing')">
@@ -920,10 +987,10 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
     <section id="tetris">
       <h2>Tetris</h2>
       <p>
-        <strong>SouthTetrisOPS</strong> / <strong>NorthTetrisOPS</strong> (NavOPS-style) use <strong>TetrisTriggerZone</strong>.
-        UI: board/rules, <strong>Settings</strong> (start level, arena scale, music), <strong>Start</strong> / <strong>Settings</strong> / <strong>Reset</strong>.
-        MIDI Troika loops from <strong>TeenyTinyTetrisBuilding</strong> (spatial).
-        Arena sky text: solo score line, or <strong>MP1</strong> (left / North) and <strong>MP2</strong> (right / South) in 2P.
+        Stand on the <strong>yellow grid</strong> at <strong>Tetris OPS</strong> for the menu
+        (board/rules, <strong>Settings</strong>, <strong>Start</strong>, <strong>Reset</strong>).
+        Host uses the <strong>South</strong> pad; guest uses <strong>North</strong>.
+        The <strong>Play Spot</strong> is a separate no-weapon pad for <strong>moving pieces</strong>, not the OPS menu.
         Live standings also on <kbd>F8</kbd> → Tetris.
       </p>
       <p>
@@ -935,7 +1002,7 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       </p>
 
       <h3>OPS lobby</h3>
-      <p>Aim with the crosshair (same idea as Nav OPS / Chess-Stele). Mode wheel and Start/Reset are <strong>host only</strong>.</p>
+      <p>Aim with the crosshair on the yellow grid. Mode wheel and Start/Reset are <strong>host only</strong>.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Input</th><th>Action</th></tr></thead>
@@ -947,6 +1014,28 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
           </tbody>
         </table>
       </div>
+
+      <h3>Clamping to a Tetris PlayZone block</h3>
+      <p>
+        After <strong>Start</strong>, clamp to one of the <strong>five PlayZone blocks</strong> in front of the Tetris OPS panel.
+        <strong>South / Player 1</strong> uses the <strong>blue</strong> blocks;
+        <strong>North / Player 2</strong> uses the <strong>red</strong> blocks.
+        That is where piece control lives — not the yellow OPS grid.
+      </p>
+      <p>
+        You have <strong>5 seconds</strong> to pick a block and settle. Clamping starts
+        <strong>3 seconds after you stop moving</strong> (if you were already standing there when the match went live, you clamp right away).
+      </p>
+      <p>
+        Once clamped, the cage cannot strafe or walk. All <kbd>WASD</kbd> (and the stick) moves the
+        <strong>Tetris piece</strong> instead. Jump off a PlayZone block to break the clamp any time.
+        You can jump up and land on a different block. Each time you leave a block during a match,
+        stay still <strong>3 seconds</strong> again before WASD returns to Tetris.
+      </p>
+      <figure>
+        <img src="images/41-tetris-playzone-blocks.jpg" alt="Blue Tetris PlayZone blocks in front of South Tetris OPS" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>PlayZone blocks in front of Tetris OPS — stand here to clamp and steer pieces</figcaption>
+      </figure>
 
       <h3>Match flow</h3>
       <ul>
@@ -984,18 +1073,17 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         Guideline scoring: <code>100 / 300 / 500 / 800 × level</code>; gravity level rises from the Settings start level.
       </p>
       <p>
-        Networked piece sync uses host-authoritative <strong>NetworkedTetrisSync</strong> —
-        remotes mirror OPS mode / board / pieces; P2 joins North (non-host <strong>Start</strong>) and steers with intents.
+        In 2P, guests see the same mode, board, and pieces; Player 2 joins North (non-host <strong>Start</strong>).
         Start level and arena scale are host-set; music volume stays local.
-        Escaper <strong>Play Tetris</strong> (and a live venue switch into Tetris) seats the
-        <strong>host at TetrisSouth / SouthTetrisOPS</strong> (same pad as solo) and
-        <strong>Player 2 at TetrisNorth / NorthTetrisOPS</strong>. 3rd+ players ring near North.
+        <strong>Play Tetris</strong> (and a live venue switch into Tetris) seats the
+        <strong>host South</strong> (same pad as solo) and <strong>Player 2 North</strong>.
+        Extra players stand near North.
         Quest gear, full ammo, and full fuel are already equipped.
       </p>
       <div class="fig-grid fig-grid--2">
         <figure>
-          <img src="images/24-tetris-zone-board.jpg" alt="Tetris South OPS with board display" loading="lazy" onerror="this.classList.add('missing')">
-          <figcaption>Tetris OPS + board — <code>24-tetris-zone-board.jpg</code></figcaption>
+          <img src="images/24-tetris-zone-board.jpg" alt="Yellow GameOPS zone at Tetris OPS" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>Yellow GameOPS zone at Tetris OPS</figcaption>
         </figure>
         <figure>
           <img src="images/25-tetris-playing.jpg" alt="Tetris Play Spot with active piece, ghost, and NEXT HUD" loading="lazy" onerror="this.classList.add('missing')">
@@ -1013,19 +1101,28 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         (same guide as the dedicated GitHub Page).
       </p>
       <p>
-        Short version: use the <strong>Chess-Stele</strong> for solo Level / Puzzles / Custom / Leorik.
+        Chess-Stele has <strong>two yellow pads</strong>:
+        <strong>front</strong> is the main stele (Level, START, Clear),
+        <strong>back</strong> is the 2D board. Step on either grid for that UI; weapons stay off while you are on the pad.
+      </p>
+      <p>
+        Short version: use the <strong>front stele</strong> for solo Level / Puzzles / Custom / Leorik.
         <strong>2P</strong> (Play Chess venue or a live match): Level / Puzzles / Custom / Leorik are hidden.
         Host <strong>START</strong> begins a new 2P game and warps both cages to the board seats
         (<strong>White's Turn</strong>; host = White, guest = Black; lion hidden).
         Host <strong>Clear</strong> resets the 32 pieces <strong>in place</strong> (no second warp).
         <kbd>Backspace</kbd> takes back the last move once, then play a new move.
-        Rear stele is the optional 2D board only. Labels / Predict / Style / music stay local.
+        The back pad is the optional 2D board only. Labels / Predict / Style / music stay local.
         Tab: purple predict + raycast. Play on the outdoor <strong>3D board</strong> or the back stele;
         <kbd>RMB</kbd> pending, fire commits. Turns use the shared header banner and <kbd>Caps Lock</kbd> balloon.
       </p>
       <figure>
         <img src="images/10-chess-south-parthenon.jpg" alt="South Parthenon chess board" loading="lazy" onerror="this.classList.add('missing')">
-        <figcaption>South Parthenon chess — <code>10-chess-south-parthenon.jpg</code></figcaption>
+        <figcaption>South Parthenon chess</figcaption>
+      </figure>
+      <figure>
+        <img src="images/40-chess-stele-zones.jpg" alt="Yellow GameOPS pads at the front and back of Chess-Stele" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Yellow GameOPS pads at Chess-Stele — front (main panel) and back (2D board). This shot is on the front pad.</figcaption>
       </figure>
     </section>
 
@@ -1033,15 +1130,14 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
     <section id="checkers">
       <h2>Checkers at North Parthenon</h2>
       <p>
-        North Parthenon is the black marble mirror of South. The <strong>8×8 red/black board</strong>
-        runs local <strong>X/Z −67 to 67</strong> (A1 at −67, H8 at 67).
-        Black (darker) racks on ranks <strong>1–3</strong>, Red (lighter) on ranks <strong>6–8</strong>, dark squares only.
-        Pieces land with the same <code>chess1–5</code> click used at South Parthenon.
+        North Parthenon is the black marble mirror of South.
+        The <strong>8×8 red/black board</strong> uses dark squares only:
+        Black (darker) starts on ranks <strong>1–3</strong>, Red (lighter) on ranks <strong>6–8</strong>.
       </p>
 
-      <h3>CheckersOPS terminal</h3>
+      <h3>Checkers OPS terminal</h3>
       <p>
-        Stand in <code>checkersOPSTriggerZone</code> (weapons and <kbd>RMB</kbd> zoom off),
+        Stand on the <strong>yellow grid</strong> at Checkers OPS (weapons off),
         aim a button with the crosshair, and <kbd>LMB</kbd> to click.
       </p>
       <div class="table-wrap">
@@ -1059,7 +1155,7 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       </div>
       <p>
         Offline is always <strong>vs AI</strong> (you are Player1; default <strong>Black</strong> until a FlipChip toss changes it — in Anti-Checkers the AI opens when Red moves first);
-        inside a Photon room it is always <strong>2P</strong>. There is no vs-AI / hotseat toggle — the session decides.
+        in a multiplayer room it is always <strong>2P</strong>. There is no vs-AI / hotseat toggle — the session decides.
         Cycling the variant re-racks the board and is pushed to guests.
         The variant locks on <strong>Start</strong> <em>and</em> on the first move played; only host <strong>Reset</strong> unlocks it.
       </p>
@@ -1113,23 +1209,22 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         (both inverted in Anti-Checkers).
       </p>
       <p>
-        <strong>NetworkedCheckersSync:</strong> Player1/Host (Master Client) color comes from <code>flipChipSideBoolean</code> on
-        <strong>Start</strong> (default <strong>Black</strong>). Guest gets the opposite color at <code>CheckersPlayer2</code>.
-        Pre-game FlipChip tosses sync via RPC; either player can toss before <strong>Start</strong>.
+        Player1 / host color comes from the FlipChip toss on
+        <strong>Start</strong> (default <strong>Black</strong>). Guest gets the opposite color.
+        Either player can toss before <strong>Start</strong>.
         <strong>Join</strong> marks lobby only — no seat warp until host <strong>Start</strong>.
-        Host <strong>Start</strong> RPCs everyone — variant applied, AI off, seats from the host's boolean, each cage warped.
-        Moves travel as packed hop sequences so both clients animate the identical chain.
-        Host <strong>Reset</strong> and the host variant wheel are RPCs too; leaving the room drops back to solo vs AI
+        Host <strong>Start</strong> begins the match for everyone — variant applied, AI off, seats from the host's coin, each cage warped.
+        Both players see the same hop chain.
+        Host <strong>Reset</strong> and the host variant wheel apply for everyone; leaving the room drops back to solo vs AI
         without wiping the board.
       </p>
       <p>
-        Console: <code>/goto CheckersPlayer1</code> (Black) · <code>/goto CheckersPlayer2</code> (Red).
-        Escaper <strong>Play Checkers</strong> mode starts P1 at the Black seat and P2 at the Red seat.
+        <strong>Play Checkers</strong> seats Player 1 on Black and Player 2 on Red.
       </p>
       <div class="fig-grid fig-grid--2">
         <figure>
-          <img src="images/30-checkers-ops.jpg" alt="CheckersOPS terminal at North Parthenon showing variant and status" loading="lazy" onerror="this.classList.add('missing')">
-          <figcaption>CheckersOPS terminal — <code>30-checkers-ops.jpg</code></figcaption>
+          <img src="images/30-checkers-ops.jpg" alt="Yellow GameOPS zone at Checkers OPS" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>Yellow GameOPS zone at Checkers OPS</figcaption>
         </figure>
         <figure>
           <img src="images/31-checkers-board-markers.jpg" alt="Checkers board with blue stand circle, green landing spheres, and green capture circles" loading="lazy" onerror="this.classList.add('missing')">
@@ -1146,7 +1241,7 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
     <section id="baffleshots">
       <h2>BaffleShots at Nav OPS</h2>
       <p>
-        Enter the <strong>Nav OPS</strong> trigger (weapons blocked).
+        Step on the <strong>yellow grid</strong> at <strong>Nav OPS</strong> (weapons off).
         <kbd>RMB</kbd> zoom is blocked only during fleet <strong>setup / Nav Plan</strong>, not once battle starts.
         Your turn / Opponent's turn use the shared HUD banner and <kbd>Caps Lock</kbd> balloon.
         Status also appears on <kbd>F8</kbd> → BaffleShots.
@@ -1158,14 +1253,21 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
           <strong>2P:</strong> each seat Confirms. Host first → <strong>Waiting…</strong> until the guest confirms, then <strong>Start</strong>.
           Guest first → host button is already <strong>Start</strong> (one click locks the host fleet and begins battle).
           Only the host can Start; the guest stays on Waiting… / Ready.</li>
-        <li><strong>Settings</strong> — Classic BattleShip vs BaffleShots art, <strong>Group Sink</strong> (on = whole group sinks when fully hit; off = each hit segment sinks alone), <strong>Repulse Mines</strong>, and <strong>Music</strong> (aim slider + wheel). Host owns Classic / Group Sink / Repulse Mines in multiplayer; music is local. MIDI can keep playing after you leave the trigger.</li>
+      </ul>
+      <h3>Settings</h3>
+      <ul>
+        <li><strong>Classic BattleShip</strong> — hardest. Hits stay secret as <strong>Group?</strong> and <strong>Ship?</strong> (you still see the picture) until you sink the whole group. Group Sink stays on.</li>
+        <li><strong>BaffleShots</strong> — you see the ship name as soon as you hit it.</li>
+        <li>In both, a hit is an <strong>orange X</strong> and <strong>HIT!</strong>. When the group is gone, those marks turn <strong>red</strong> and it says <strong>SUNK!</strong>.</li>
+        <li><strong>Group Sink</strong> — on: the whole group goes down together. Off: ships in the group can sink one at a time. (Classic keeps this on.)</li>
+        <li><strong>Repulse Mines</strong> and <strong>Music</strong> are in the same panel (aim the music slider + wheel). In 2P, the host sets Classic, Group Sink, and mines. Music is just for you.</li>
       </ul>
       <h3>Repulse Mines</h3>
       <p>
         Experimental <strong>attack</strong> mines. When on, each side plants <strong>2</strong> on empty water on their fleet grid
         — the water the opponent is shooting at. Nav Plan places them randomly; move with <kbd>RMB</kbd> drag and
         <kbd>LMB</kbd> (or RMB-release) — setup only, not on ships or shot cells.
-        No 3D mine mesh: fleet grid shows the icon; target shows it only after a shot hits one (<strong>REPULSE</strong>, yellow X).
+        You see the icon on your fleet grid; the target grid shows it only after a shot hits one (<strong>REPULSE</strong>, yellow X).
         The shot <strong>bounces back</strong> at the ship that fired it: that player takes a random remaining hull hit
         and must <strong>stop to repair for one turn</strong>
         (yellow X on that fleet cell + smoke; the opponent gets an <strong>extra</strong> shot).
@@ -1177,15 +1279,15 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         On <strong>game over</strong>, the target grid reveals any remaining enemy ships and unexploded Repulse Mines.
       </p>
       <p>
-        <strong>Solo:</strong> Human vs AI when not in a networked room.
-        <strong>2P (East / West):</strong> East = P1 / host (Master Client); West = P2 / guest.
-        Play BaffleShots (and a live venue switch) seats host at <strong>NavOPSEast</strong> and guest at <strong>NavOPSWest</strong>.
+        <strong>Solo:</strong> you vs AI when you are not in a multiplayer room.
+        <strong>2P:</strong> East is the host, West is the guest.
+        <strong>Play BaffleShots</strong> (and a live venue switch) seats host East and guest West.
         Place and Confirm at your seat; host <strong>Start</strong> when both fleets are locked (see Confirm / Start above).
-        Host-only Reset. Ocean fog of war hides opponent hulls until hit; damage FX still play on struck segments.
+        Host-only Reset. Ocean fog hides the opponent’s ships until you hit them; hit and sink effects still play.
       </p>
       <figure>
         <img src="images/09-baffleshots-navops.jpg" alt="Nav OPS BaffleShots terminal" loading="lazy" onerror="this.classList.add('missing')">
-        <figcaption>Nav OPS / BaffleShots — <code>09-baffleshots-navops.jpg</code></figcaption>
+        <figcaption>Nav OPS / BaffleShots terminal</figcaption>
       </figure>
     </section>
 
@@ -1197,15 +1299,15 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         <li><strong>Auto-fire weapons</strong> — select with <kbd>RMB</kbd> (mouse) or <kbd>LB</kbd> (gamepad) in Quick Menu.</li>
         <li><strong>Throw sight</strong> — mouse wheel (or LT/RT) sets loft for <strong>Cannon Ball</strong> (green) and <strong>BallChain</strong> (purple). Each weapon keeps its own loft when you switch.</li>
         <li><strong>BallChain (<kbd>0</kbd>)</strong> — low-velocity toss that lays climbable steps as it flies; keep shooting to add links; melee a segment to clear a line.</li>
-        <li><strong>No-weapon zones</strong> — Nav OPS, Chess-Stele, bowling, pool, <strong>Tetris OPS</strong>, <strong>Tetris Play Spot</strong>, and <strong>Checkers OPS</strong> block fire for UI. On a checker piece or square — or anywhere in the checkers board zone while you <strong>look down</strong> — weapons and <kbd>RMB</kbd> zoom are off so hops can use RMB. At Nav OPS, <kbd>RMB</kbd> zoom is blocked only during fleet setup (not during battle).</li>
-        <li><strong>Direction indicators</strong> — four icons under the compass (bowl, propeller, duck raft, FlipChip); slide with bearing, scale with distance; DetPack has inventory only, no arrow.</li>
+        <li><strong>Yellow GameOPS zones</strong> — step on the yellow grid at Nav OPS, Pool, Bowling, Tetris OPS, Checkers OPS, or either Chess-Stele pad: that game’s UI is on and weapons are off. <strong>Tetris Play Spot</strong> is a separate no-weapon pad for moving pieces. On a checker piece or square — or anywhere on the checkers board while you <strong>look down</strong> — weapons and <kbd>RMB</kbd> zoom are off so hops can use RMB. At Nav OPS, <kbd>RMB</kbd> zoom is blocked only during fleet setup (not during battle).</li>
+        <li><strong>Direction indicators</strong> — quest items clockwise in the order you get them (bowl, propeller, duck raft); <strong>FlipChip</strong> is on the same band but is not a quest item. Icons slide with bearing and scale with distance; DetPack has inventory only, no arrow.</li>
         <li><strong>Scores</strong> — <kbd>F8</kbd> open, <kbd>Space</kbd> cycle (includes <strong>Tetris</strong>).</li>
         <li><strong>Whose turn / who won</strong> — top HUD ~7s (Pool also shows <strong>Wins!</strong>); <kbd>Caps Lock</kbd> for the balloon. <strong>Tetris</strong> is live — 2P shows <strong>Players Ready</strong>, then <strong>Wins!</strong> / <strong>You Lose!</strong> / <strong>Draw!</strong> / <strong>Co-op Clear!</strong> / <strong>Sprint Clear!</strong> / <strong>Time's Up!</strong>.</li>
-        <li><strong>Mini-game host</strong> — only the Master Client opens, starts, resets, and (Pool) changes mode; everyone else <kbd>RMB</kbd> joins while recruiting (<strong>Pool:</strong> host <kbd>Shift</kbd>+<kbd>LMB</kbd> opens lobby first; guest <kbd>RMB</kbd> or <strong>Join</strong> inside <strong>PlayBilliardSwitchZone</strong>). <strong>Live venue switch:</strong> host <strong>Game Mode</strong> hops Play / Explore mid-session (combat modes = New Game). <strong>Tetris:</strong> host Engage at OPS, then <strong>South Play Spot</strong> for <strong>5s</strong> to start Playing; guests claim North via non-host <strong>Start</strong>; spawn host South / guest North. <strong>BaffleShots:</strong> East host / West guest; Confirm then host Start (Waiting… if the host locked first); fog until hits; host owns Classic / Group Sink / Repulse Mines settings. <strong>Checkers:</strong> host owns variant wheel, Start, Reset; guest <strong>Join</strong> marks lobby; <strong>FlipChip</strong> button + pre-game toss sets Player1/Host color before <strong>Start</strong>. <strong>Chess 2P:</strong> host START / Clear only; no Level / Puzzles / Custom / Leorik on the stele.</li>
-        <li><strong>Checkers</strong> — solo is always vs AI (Player1 = you), a Photon room is always 2P. Wheel the OPS panel for the variant (locks on Start or the first move, unlocks on host Reset). <strong>FlipChip</strong> before <strong>Start</strong>: top color = Player1/Host color (default Black). On the board: stand on a piece (<strong>blue</strong>), aim a <strong>green sphere</strong> to land or a <strong>green circle</strong> to capture, <kbd>RMB</kbd> to pend (<strong>orange</strong>), <kbd>LMB</kbd> to commit, <kbd>Backspace</kbd> to cancel. Aim the far sphere to take a whole jump chain; once a chain starts you must finish it.</li>
-        <li><strong>BaffleShots</strong> — Nav Plan randomizes fleet (+ Repulse Mines if on); <kbd>RMB</kbd> drag ships or mines in setup; Group Sink / Repulse Mines in Settings; a hit mine <strong>repulses</strong> the shot back — attacker repairs and skips a turn, opponent gets a bonus shot; game over reveals leftover ships/mines; Nav Plan hides in battle until Reset. <strong>2P Confirm:</strong> host first → Waiting… then Start; guest first → host button is Start.</li>
+        <li><strong>Mini-game host</strong> — only the host (the player who started the room) opens, starts, resets, and (Pool) changes mode; everyone else <kbd>RMB</kbd> joins while recruiting (<strong>Pool:</strong> host <kbd>Shift</kbd>+<kbd>LMB</kbd> opens lobby first; guest <kbd>RMB</kbd> or <strong>Join</strong> on the yellow grid at the table). <strong>Live venue switch:</strong> host <strong>Game Mode</strong> hops Play / Explore mid-session (combat modes = New Game). <strong>Tetris:</strong> host Engage at OPS, then <strong>South Play Spot</strong> for <strong>5s</strong> to start Playing; guests claim North via non-host <strong>Start</strong>; spawn host South / guest North. <strong>BaffleShots:</strong> East host / West guest; Confirm then host Start (Waiting… if the host locked first); fog until hits; host owns Classic / Group Sink / Repulse Mines settings. <strong>Checkers:</strong> host owns variant wheel, Start, Reset; guest <strong>Join</strong> marks lobby; <strong>FlipChip</strong> button + pre-game toss sets Player1/Host color before <strong>Start</strong>. <strong>Chess 2P:</strong> host START / Clear only; no Level / Puzzles / Custom / Leorik on the stele.</li>
+        <li><strong>Checkers</strong> — solo is always vs AI (Player1 = you), a multiplayer room is always 2P. Wheel the OPS panel for the variant (locks on Start or the first move, unlocks on host Reset). <strong>FlipChip</strong> before <strong>Start</strong>: top color = Player1/Host color (default Black). On the board: stand on a piece (<strong>blue</strong>), aim a <strong>green sphere</strong> to land or a <strong>green circle</strong> to capture, <kbd>RMB</kbd> to pend (<strong>orange</strong>), <kbd>LMB</kbd> to commit, <kbd>Backspace</kbd> to cancel. Aim the far sphere to take a whole jump chain; once a chain starts you must finish it.</li>
+        <li><strong>BaffleShots</strong> — stand on the yellow grid at Nav OPS. Nav Plan randomizes fleet (+ Repulse Mines if on); <kbd>RMB</kbd> drag ships or mines in setup. Classic hides <strong>Group?</strong> / <strong>Ship?</strong> until a group sinks (Group Sink stays on). Hits are orange until sunk, then red. A hit mine <strong>repulses</strong> the shot back — attacker repairs and skips a turn, opponent gets a bonus shot. Game over reveals leftover ships/mines. <strong>2P Confirm:</strong> host first → Waiting… then Start; guest first → host button is Start.</li>
         <li><strong>Pool cue</strong> — walk onto the cue to shoot (wheel = power, <kbd>LMB</kbd> = stroke); <kbd>Shift</kbd> + ghost after a cue scratch for ball-in-hand — object balls off the table do not re-spot the cue.</li>
-        <li><strong>Tetris</strong> — Engage → host on South <strong>5s</strong> → Playing → clamp (immediate if already on pad, else <strong>3s</strong>) → <strong>0.5s</strong> → first piece; stick/D-Pad or <kbd>A</kbd>/<kbd>D</kbd> move, <kbd>Q</kbd>/<kbd>LB</kbd> · <kbd>E</kbd>/<kbd>RB</kbd> rotate, <kbd>W</kbd>/stick↑ flip, <kbd>C</kbd>/<kbd>Y</kbd> Hold, soft or <kbd>RT</kbd> hard; Jump/<kbd>B</kbd> or Shift/<kbd>A</kbd>+WASD to leave; Settings = level + arena <strong>1/2 · 3/4 · Full</strong> (host) + music (local); Sprint 40 / Ultra 2:00 / Co-op / Vs Race·Attack·Ultra Duel; corpse board until Start/Reset. <strong>Spawn:</strong> host SouthTetrisOPS, guest NorthTetrisOPS.</li>
+        <li><strong>Tetris</strong> — Engage → host on South <strong>5s</strong> → Playing. Clamp on a PlayZone block (blue South / red North): stay still <strong>3s</strong> (or immediately if already there). While clamped the cage cannot walk — WASD moves the piece. Jump off to break clamp. Stick/D-Pad or <kbd>A</kbd>/<kbd>D</kbd> move, <kbd>Q</kbd>/<kbd>LB</kbd> · <kbd>E</kbd>/<kbd>RB</kbd> rotate, <kbd>W</kbd>/stick↑ flip, <kbd>C</kbd>/<kbd>Y</kbd> Hold, soft or <kbd>RT</kbd> hard; leftover board stays until Start/Reset. <strong>Spawn:</strong> host South, guest North.</li>
         <li><strong>ESC</strong> — pause / Game Selection (HUD off); during death or victory, second <kbd>ESC</kbd> returns to the orbit with <strong>Continue</strong> / <strong>Restart</strong>.</li>
         <li><strong>Lives</strong> — 3 lives; <strong>Continue</strong> respawns; <strong>Restart</strong> after the last life or a victory. <strong>GAME OVER</strong> means the run is finished.</li>
         <li><strong>Ocean landing</strong> — falling into Ocean-tagged water has no fall impact; land and buildings still deal fall damage.</li>

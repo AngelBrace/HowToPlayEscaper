@@ -30,7 +30,7 @@ PNG or WebP also work — update the `src` paths in `index.html` if you change e
 | `04-scores-overlay-f4.jpg` | **F8** scores overlay open (Escaper page or a mini-game page). Prefer **Shift+F12**. |
 | `05-turn-banner-header.jpg` | Mini-game turn / win flash on top HUD — e.g. `Alice's Turn` or `Alice Wins!` on **3DGameHeaderText** (Pool / Bowling / Chess / BaffleShots). For Tetris, prefer **Players Ready** / **Wins!** / **You Lose!** / **Draw!** / **Co-op Clear!** / **Sprint Clear!** / **Time's Up!** instead of a turn line. |
 | `06-game-info-balloon.jpg` | **Caps Lock** / zone balloon showing whose turn or zone hint near the health bar. |
-| `07-pool-zone-board.jpg` | Yellow GameOPS grid at the pool table (`PlayBilliardSwitchZone`) + **pool board** (mode rules and/or per-player sunk lines like `Name Sunk: SD-1, ST-9`). Show the visible yellow floor pattern. |
+| `07-pool-zone-board.jpg` | Yellow GameOPS grid at **PoolOPS** (`PoolOPSTriggerZone`) + both screens — board (mode, lobby, per-player sunk lines like `Name Sunk: SD-1, ST-9`) and the rules screen. Show **Start** / **Settings** / **Reset** and the visible yellow floor pattern. |
 | `08-bowling-zone.jpg` | Yellow GameOPS grid at the lane (`PlayBowlingSwitchZone`) + switch / scoreboard. Show the visible yellow floor pattern. |
 | `24-tetris-zone-board.jpg` | Yellow GameOPS grid at **SouthTetrisOPS** / **TetrisTriggerZone** — OPS board/rules or **Settings** (level, arena **1/2 · 3/4 · Full**, music), **Start** / **Settings** / **Reset**. Show the visible yellow floor pattern. Host / solo spawn is this South pad; Player 2 is **NorthTetrisOPS**. |
 | `25-tetris-playing.jpg` | On **Play Spot** while Playing — active piece + translucent **ghost**; FPS HUD **NEXT** / optional **HOLD** / level / score. Co-op: two pieces on 20-wide (yours bright, other dim). Vs: dual 10×20 wells + mid wall. |
@@ -40,6 +40,7 @@ PNG or WebP also work — update the `src` paths in `index.html` if you change e
 | `40-chess-stele-zones.jpg` | Both Chess-Stele yellow GameOPS pads in one shot (`ChessOPSFrontZone` + `ChessOPSBackZone`). Front = main stele; back = 2D board. |
 | `30-checkers-ops.jpg` | Yellow GameOPS grid at **checkersOPSTriggerZone** — Checkers OPS panel with variant / status / **Start** / **FlipChip** / **Settings** / **Reset** (guest: **Join**). Show the visible yellow floor pattern. |
 | `31-checkers-board-markers.jpg` | North Parthenon board mid-turn — **blue circle** on the piece you stand on, **green spheres** on landing squares, **green circles** on capturable pieces, and ideally an **orange** pending line after RMB. |
+| `35-checkers-tab-2d.jpg` | **Tab** `Quick2DCheckersBoard` during a normal mid-game — overlay open, 3D board behind it, blue cage square, green legal/aim markers, orange only if a line is pending. Prefer **Shift+F12** crop. |
 | `11-settings-f2.jpg` | **F2** Escaper Settings panel open. Prefer **Shift+F12**. |
 | `12-gamepad-reference.jpg` | Optional: in-game gamepad calibration (Settings) or remapping (**F3**) panel. |
 | `27-continue-death.jpg` | Death with lives left — **You were Killed!** + reason + **Lives Remaining** + **Continue** (no GAME OVER on `3DMessageText`). Prefer **Shift+F12** crop of 3DGameOverPanel. |
@@ -57,7 +58,7 @@ PNG or WebP also work — update the `src` paths in `index.html` if you change e
 | `26-ballchain-throw.jpg` | Optional: BallChain equipped — purple loft reticle + a climbable ball ladder in world. |
 | `14-propeller-flight.jpg` | Cage with **Propeller** active (flight). |
 | `15-duck-raft.jpg` | **Duck Raft / Bowl** mode on water. |
-| `16-pool-lobby-recruiting.jpg` | Pool board recruiting: host **Shift+LMB** opened lobby; guest **RMB** / **Join** joined; player roster listed. |
+| `16-pool-lobby-recruiting.jpg` | PoolOPS board recruiting: host aimed **Reset** to open the lobby; guest aimed **Join**; player roster listed. |
 | `22-pool-header-icons.jpg` | Optional: Billiards header row with all 15 ball icons — green check on sunk, red X on scratched. |
 | `23-pool-cue-stand.jpg` | Optional: standing on the cue with purple sight + cue-stick power slider visible. |
 | `17-bowling-scoreboard.jpg` | Bowling scoreboard with multiplayer roster / turn marker. |
@@ -79,6 +80,19 @@ PNG or WebP also work — update the `src` paths in `index.html` if you change e
 | `37-game-mode-venue-switch.jpg` | Optional: **Game Mode** panel during a live MP Play session — host can pick another Play / Explore venue; combat modes disabled. |
 | `38-baffleshots-confirm-start.jpg` | Optional: 2P BaffleShots after fleet lock — host **Waiting…** then **Start**, or **Start** immediately if the guest confirmed first. |
 | `39-tetris-north-ops.jpg` | Optional: **NorthTetrisOPS** / Player 2 pad after a Play Tetris or venue-switch spawn (host remains at South). |
+| `42-enemy-zombie.jpg` | Zombie jelly ball rolling toward the cage. |
+| `43-enemy-normal.jpg` | Normal (burgundy) jelly ball rolling toward the player. |
+| `44-enemy-purple.jpg` | Purple jelly ball in the air, strafing or shooting. |
+| `45-enemy-orange.jpg` | Orange jelly ball at Round Cross Field, or leaving it to chase. |
+| `46-enemy-jellyrover.jpg` | JellyRover boss rolling in from the shore. |
+| `47-rayracer-ready.jpg` | Ray Racer deck in **third person** with the green **READY** button and the bike in frame. |
+| `48-rayracer-ops.jpg` | **RayRacerOPS** settings open — ride style, **Theme**, sky, grid-line, and floor fade. Prefer **Shift+F12**. |
+| `49-rayracer-ride.jpg` | Classic Tron ride: square light-cycle trail, a pillar, and the grey computer bike with a white ray. |
+| `50-hockey-rink.jpg` | Hockey rink from ice level: both nets glowing in their team colors, puck at center, a few bikes if a match is on. |
+| `51-hockey-ops.jpg` | **Hockey Arena OPS** open — **Start**, **Reset**, **Fill open seats**, and the score line. Prefer **Shift+F12**. |
+| `52-hockey-roster.jpg` | Game Roster with Team A (bars 0–3) and Team B (bars 4–7). Include the right-click menu (**Color** / **Deactivate**, or **Activate** on an Open bar) if it fits. |
+| `53-spectate-bar.jpg` | Bottom spectate bar: **Previous**, **Escaper**, **Next**. Easiest in a Ray Racer room with a 5th person, or a Hockey room past eight. |
+| `54-room-chat.jpg` | Optional, later: blue room chat panel. A few lines in the log and the edit line at the bottom. Prefer **Shift+F12**. |
 
 ---
 

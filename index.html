@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HowToPlayEscaper — The Escaper</title>
-  <meta name="description" content="How to play The Escaper: WASD and mouse, lives and death, Ocean water landings, gamepad, UI hotkeys, F8 scores, and mini-games for Pool, Bowling, Tetris, Chess, Checkers, and BaffleShots.">
+  <meta name="description" content="How to play The Escaper: WASD and mouse, lives and death, Ocean water landings, gamepad, UI hotkeys, F8 scores, and mini-games for Pool, Bowling, Tetris, Chess, Checkers, Connect 4, BaffleShots, and Ray Racer.">
   <meta name="theme-color" content="#0f1419">
   <style>
     :root {
@@ -234,7 +234,7 @@
       <p class="hero__lead">
         Move with <strong>WASD</strong>, look with the mouse, fight, fly, and explore —
         then jump into world mini-games: <strong>Pool</strong>, <strong>Bowling</strong>,
-        <strong>Tetris</strong>, <strong>Chess</strong>, <strong>Checkers</strong>, and <strong>BaffleShots</strong>.
+        <strong>Tetris</strong>, <strong>Chess</strong>, <strong>Checkers</strong>, <strong>Connect 4</strong>, <strong>BaffleShots</strong>, <strong>Ray Racer</strong>, and <strong>Hockey Arena</strong>.
       </p>
       <p class="link-row">
         <a href="https://angelbrace.github.io/SouthParthenonChess/">Chess at South Parthenon</a>
@@ -246,17 +246,22 @@
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#game-modes">Game modes</a></li>
+        <li><a href="#enemies">Enemies</a></li>
         <li><a href="#keyboard">Keyboard</a></li>
         <li><a href="#lives">Lives &amp; death</a></li>
         <li><a href="#hotkeys">UI hotkeys</a></li>
         <li><a href="#direction-indicators">Direction indicators</a></li>
         <li><a href="#gamepad">Gamepad</a></li>
         <li><a href="#minigames">Mini-games</a></li>
+        <li><a href="#room-chat">Room chat</a></li>
         <li><a href="#pool">Pool</a></li>
         <li><a href="#bowling">Bowling</a></li>
         <li><a href="#tetris">Tetris</a></li>
         <li><a href="#chess">Chess</a></li>
         <li><a href="#checkers">Checkers</a></li>
+        <li><a href="#connect4">Connect 4</a></li>
+        <li><a href="#rayracer">Ray Racer</a></li>
+        <li><a href="#hockey">Hockey Arena</a></li>
         <li><a href="#baffleshots">BaffleShots</a></li>
         <li><a href="#tips">Tips</a></li>
         <li><a href="#appendix">Appendix</a></li>
@@ -295,10 +300,12 @@
       </p>
       <p>
         <strong>Live multiplayer session:</strong> after a Play / Explore run is already going, the <strong>host</strong>
-        can pick another Play venue or Explore from <strong>Game Mode</strong>. Everyone leaves the old mini-game,
-        teleports to the new seats, and gets a <strong>lobby</strong> (no auto-start). Walk to that venue’s OPS / stele
+        can pick another Play venue or Explore from <strong>Game Mode</strong>. Everyone stays in the same Photon room.
+        The old mini-game ends — the Ray Racer bike is removed, and hockey bots are destroyed — then everyone
+        teleports to the new seats and gets a <strong>lobby</strong> (no auto-start). Walk to that venue’s OPS / stele
         and press <strong>START</strong> there. Combat modes (Modern / Quest / Classic / Infinite) stay a full
-        <strong>New Game</strong>. Guests cannot switch. Overlays such as Game Selection close so everyone returns to the
+        <strong>New Game</strong>. <strong>New Game</strong> on your own machine does the same cleanup before the next mode starts.
+        Guests cannot switch. Overlays such as Game Selection close so everyone returns to the
         <strong>3DGameHUD</strong>; leftover Game Info balloon text from the previous venue is cleared.
       </p>
       <h3>The Escaper (Modern)</h3>
@@ -323,7 +330,7 @@
         <strong>CrossFields</strong>). Stand on SnowyLavaRock for <strong>+1 health</strong> and
         <strong>+1 fuel every second</strong> (Sleigh Ride MIDI loops while you are there).
         The beige crate stockpiles <strong>yellow ammo</strong> while you stay on the rock — one ball on first contact,
-        then another <strong>every minute</strong> (the timer pauses if you leave); walk to the crate to collect.
+        then another <strong>every 15 seconds</strong> (the timer pauses if you leave); walk to the crate to collect.
         After the Propeller, the <strong>Cage Bowl</strong> is fixed high on a skyscraper — you need flight to reach it.
       </p>
       <h3>Infinite Enemies</h3>
@@ -342,14 +349,67 @@
         No enemies; <strong>Cage Bowl</strong>, <strong>Propeller</strong>, and <strong>Duck Raft</strong> are already equipped.
         Roam the island and play any mini-game without the main quest pressure.
       </p>
-      <h3>Play Checkers / Chess / BaffleShots / Bowling / Pool / Teeny Tiny Tetris</h3>
+      <h3>Play Checkers / Chess / BaffleShots / Bowling / Pool / Teeny Tiny Tetris / Connect 4 / Ray Racer / Hockey Arena</h3>
       <p>
         No enemies; quest gear, full ammo, and full fuel from the start. Each mode warps you to its venue
         (North Parthenon checkers, South Parthenon chess, Nav OPS East/West, bowling lane, billiard table,
-        Tetris South/North OPS)
+        Tetris South/North OPS, Connect 4 south of the Cooling Towers, the Ray Racer deck off the island,
+        or the Hockey Arena rink)
         so you can practice or host multiplayer there. In a live Photon session the host can hop between these venues
         (and Explore) without ending the room — see <strong>Live multiplayer session</strong> above.
       </p>
+    </section>
+
+    <section id="enemies">
+      <h2>Enemies</h2>
+      <p>
+        Ground enemies roll toward you. Flying ones stay in the air and shoot.
+        With <strong>Sky Eye</strong> (<kbd>F11</kbd>) open:
+        <kbd>Shift</kbd>+<kbd>1</kbd> JellyRover,
+        <kbd>Shift</kbd>+<kbd>2</kbd> Zombie,
+        <kbd>Shift</kbd>+<kbd>3</kbd> Normal,
+        <kbd>Shift</kbd>+<kbd>4</kbd> Purple.
+        Orange has no Sky Eye key.
+      </p>
+      <div class="fig-grid fig-grid--2">
+        <figure>
+          <img src="images/42-enemy-zombie.jpg" alt="Zombie jelly ball rolling toward the cage" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>
+            <strong>Zombie</strong> — rolls slowly and clumsily. It often rolls past you, then takes a while to notice and turn back.
+            It walks into ammo balls. Easiest to hit.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/43-enemy-normal.jpg" alt="Normal burgundy jelly ball rolling toward the player" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>
+            <strong>Normal</strong> — rolls toward where you were standing. Step aside and it finishes that roll, then aims at you again.
+            It can jump or steer around ammo balls.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/44-enemy-purple.jpg" alt="Purple jelly ball flying and shooting" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>
+            <strong>Purple</strong> — stays at height 20 or above and strafes in arcs. It shoots slower purple jelly shots and cannot fire behind itself, so it has to turn.
+            Below half health it falls and fights like a Normal.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/45-enemy-orange.jpg" alt="Orange jelly ball guarding Round Cross Field" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption>
+            <strong>Orange</strong> — a larger ground roller that generally guards <strong>Round Cross Field</strong>.
+            It will leave the field and pursue you.
+          </figcaption>
+        </figure>
+      </div>
+      <figure>
+        <img src="images/46-enemy-jellyrover.jpg" alt="JellyRover boss rolling in from the shore" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>
+          <strong>JellyRover boss</strong> — spawns off the shore and rolls at you at top speed, constantly correcting.
+          It bounces over obstacles and does not give up.
+          Destroy <strong>3</strong> sentry buoys and it stops spawning.
+          <strong>Classic</strong> has no grunt waves: the boss starts hunting <strong>30 seconds</strong> in and keeps coming back.
+        </figcaption>
+      </figure>
     </section>
 
     <!-- KEYBOARD -->
@@ -365,7 +425,7 @@
             <tr><td>Mouse</td><td>Look / camera</td></tr>
             <tr><td><kbd>Left Shift</kbd></td><td>Sprint</td></tr>
             <tr><td><kbd>Space</kbd></td><td>Jump</td></tr>
-            <tr><td><kbd>V</kbd></td><td>1st person ↔ 3rd person</td></tr>
+            <tr><td><kbd>V</kbd></td><td>Cycle camera: Normal, Full Screen, Third Person. A Ray Racer match opens in Third Person</td></tr>
           </tbody>
         </table>
       </div>
@@ -416,14 +476,31 @@
         <li>Console: <code>/flipchip</code> drops a new chip 10 ahead and 50 up.</li>
       </ul>
       <p>
-        <strong>Checkers FlipChip (pre-game):</strong> At <strong>CheckersOPS</strong>, press the <strong>FlipChip</strong> button
-        to spawn the coin on the OPS screen. Equip Melee, <kbd>RMB</kbd> pickup, <kbd>LMB</kbd> toss (fast spin — no flip-count rule).
-        When it settles, <strong>Black side up</strong> → Player1/Host plays Black; <strong>Red side up</strong> → Player1/Host plays Red
-        (default Black if you never toss). Works solo vs AI and in a Photon room — either player can toss before <strong>Start</strong>.
-        Seats lock once on <strong>Start</strong>; mid-game tosses only affect the next match after <strong>Reset</strong>.
-        Chip lost in the ocean → press <strong>FlipChip</strong> again to respawn.
-        While the coin is in the world, the fourth <strong>direction indicator</strong> under the compass
-        (<strong>FlipChip</strong> icon) points toward it — see <a href="#direction-indicators">Direction indicators</a> (hidden while held in melee).
+        <strong>Venue FlipChip (seats):</strong> Each terminal has its own button —
+        <code>checkersFlipChipButton</code>, <code>chessFlipChipButton</code>, <code>bowlingFlipChipButton</code>,
+        <code>poolFlipChipButton</code>, <code>connect4FlipChipButton</code>.
+        One toss before <strong>Start</strong>. <strong>No toss:</strong> the host is <strong>Player 1</strong> and moves first.
+        <strong>Black side up:</strong> the host stays Player 1. <strong>Red side up:</strong> the guest takes the Player 1 seat and moves first.
+        A solo toss is a free chip and does not move anyone. <strong>Reset</strong> lets you toss again
+        (Checkers keeps its color until the next toss). Tetris and BaffleShots have no seat toss.
+        <strong>Checkers</strong> also uses the coin for color: black side up → host plays Black; red side up → host plays Red (default Black).
+        Chip lost in the ocean → press that venue's <strong>FlipChip</strong> button again.
+        While the coin is in the world, the <strong>FlipChip</strong> icon under the compass
+        points toward it — see <a href="#direction-indicators">Direction indicators</a> (hidden while held in melee).
+        The same icon tracks <strong>forRealFlipChip</strong>, the LED coin.
+      </p>
+      <p>
+        <strong>LED coin in hand:</strong> one RGB LED inside the chip. Green face up → whole chip glows green. Red face up → whole chip glows red. On its edge → blue.
+        Use the <strong>mouse wheel</strong> to pick the face. <strong>RMB drop</strong> keeps that glow.
+        <strong>LMB toss</strong> flashes green/red at random until it stops — you will not know the call until it lands.
+        Green is Player 1; red is Player 2; blue on edge plays the Game Selection theme.
+      </p>
+      <p>
+        <strong>Blue Angel (North Aerie):</strong> Stand in the angel zone for one continuous minute
+        (leaving resets the timer; the visit count does not). A flashing green/red coin appears above the angel
+        and the compass icon follows it. Take it with <strong>Melee</strong> nearby (<kbd>LMB</kbd>, or <kbd>RMB</kbd>).
+        If a coin is already hovering, a later minute does not pay ammo until you take it.
+        After it is taken, a completed minute grants <strong>3–5 yellow ammo</strong>. Console: <code>/irlFlipChip</code>.
       </p>
 
       <h4 id="c4-timer-bomb">C4 Timer Bomb</h4>
@@ -448,7 +525,7 @@
         <li><strong>Throw power</strong> uses <strong>Melee Punch</strong> — set on weapon <kbd>1</kbd> (wheel / <kbd>Shift</kbd>+wheel). C4 does not change Punch; it reuses whatever you last set on the fist.</li>
         <li><strong>Mouse wheel in C4 mode</strong> sets <strong>fuse length</strong> (<strong>3s</strong> min, <strong>30s</strong> max; default <strong>10s</strong>). Fuse meter flashes under the sight; bomb LCD shows the preset before stick.</li>
         <li><kbd>LMB</kbd> <strong>quick throw</strong> — spawns and throws at your aim (no <kbd>RMB</kbd> hold required).</li>
-        <li><kbd>RMB</kbd> <strong>hold</strong> — arm in hand (−1 charge). <kbd>LMB</kbd> while holding = throw. <kbd>RMB</kbd> release = drop. Fuse starts on first solid impact after throw or drop.</li>
+        <li><kbd>RMB</kbd> <strong>hold</strong> — arm in hand (−1 charge). <kbd>LMB</kbd> while holding = throw. Release in open air drops it so it falls and sticks. Release while it is already against a surface plants it there. The held bomb does not pass through solids. Fuse starts when it sticks.</li>
         <li>Blast radius is <strong>2×</strong> Blaster Grenade; chain-detonates other armed C4 in range.</li>
         <li>First solid hit <strong>sticks</strong>. The bomb LCD counts <code>10:00</code> down to <code>00:00</code> in <strong>60ths</strong> of a second. The 3D <code>DetonatorLight</code> mesh flashes GreenEmit / RedEmit (faster in the last 2 seconds). An electronic beep plays at <code>10:00</code> and every second until detonation. Stay too close and you take blast damage. Blast uses the BaffleShots ship-hit VFX (<code>CFXR2 WW Explosion</code>).</li>
         <li>Blast radius is <strong>2x</strong> the grenade blast. Damages enemies and the player, knocks rigidbodies, and destroys SentryBuoys (they sink). 3 sentries still disable JellyRover boss spawn; 8 still stop Infinite waves.</li>
@@ -500,9 +577,9 @@
 
       <h3>Equipment</h3>
       <ul>
-        <li><kbd>F</kbd> — Propeller (flight)</li>
+        <li><kbd>F</kbd> — Propeller (flight). While the engine is on, sliders under the circle map show <strong>THRUST</strong>, <strong>RPM</strong>, <strong>HOVER</strong>, <strong>HEIGHT</strong> (full = 1.5 km), and <strong>VERTICAL</strong>, each with its number. The green altitude at the top of the screen stays. The panel hides when the engine is off.</li>
         <li><kbd>B</kbd> — Duck Raft / Bowl</li>
-        <li><kbd>E</kbd> — Interact / collect</li>
+        <li><kbd>E</kbd> — Interact / collect. Off the island, <kbd>E</kbd> mounts or dismounts a Ray Racer bike you have already found. It does nothing if you have not found one. On the Ray Racer deck, <kbd>E</kbd> opens or closes the <strong>RayRacerOPS</strong> lobby. You stay on the bike and on the deck.</li>
       </ul>
       <div class="fig-grid fig-grid--2">
         <figure>
@@ -517,9 +594,9 @@
 
       <h3>Menus</h3>
       <ul>
-        <li><kbd>ESC</kbd> — Pause / open Game Selection (3D HUD off). During death or victory, toggles the menu; <kbd>ESC</kbd> again returns to the camera pan</li>
+        <li><kbd>ESC</kbd> — Pause / open Game Selection (3D HUD off). On the Ray Racer deck, if <strong>RayRacerOPS</strong> is open, the first <kbd>ESC</kbd> only closes that panel and leaves you on the deck. <kbd>ESC</kbd> again opens Game Selection. During death or victory, toggles the menu; <kbd>ESC</kbd> again returns to the camera pan</li>
         <li><kbd>P</kbd> — Game pause (blocked during death / victory)</li>
-        <li><kbd>Tab</kbd> — Quick Menu (weapons / items)</li>
+        <li><kbd>Tab</kbd> — Quick Menu (weapons / items). On the <strong>checkers</strong> or <strong>chess</strong> board: 2D board overlay instead</li>
         <li><kbd>`</kbd> or <kbd>F9</kbd> — Console</li>
         <li><kbd>Enter</kbd> / <kbd>Space</kbd> — Confirm in menus (Game Over uses the on-screen <strong>Continue</strong> / <strong>Restart</strong> buttons)</li>
       </ul>
@@ -624,7 +701,7 @@
             <tr><td><kbd>F1</kbd></td><td>Help</td></tr>
             <tr><td><kbd>F2</kbd></td><td>Quick Settings (Escaper Settings)</td></tr>
             <tr><td><kbd>F3</kbd></td><td>Quick Input Mapping (GamePad Key Bindings)</td></tr>
-            <tr><td><kbd>F4</kbd></td><td><em>(reserved)</em></td></tr>
+            <tr><td><kbd>F4</kbd></td><td>Goto map. Scroll Otaku Island and click a place. Works while paused. Closed on settings, the console, and Game Over. Typed <code>/goto</code> still works.</td></tr>
           </tbody>
         </table>
       </div>
@@ -636,7 +713,7 @@
           <tbody>
             <tr><td><kbd>F5</kbd> / <kbd>F6</kbd> / <kbd>F7</kbd></td><td><em>(reserved — future Save / Load)</em></td></tr>
             <tr><td><kbd>F8</kbd></td><td><strong>Scores overlay</strong> (Escaper + live mini-game pages; soft-pauses mid-match)</td></tr>
-            <tr><td><kbd>Space</kbd> <em>(F8 open)</em></td><td>Cycle Escaper → Bowling → Billiards → BaffleShots → Chess → Tetris</td></tr>
+            <tr><td><kbd>Space</kbd> <em>(F8 open)</em></td><td>Cycle Escaper → Bowling → Billiards → BaffleShots → Chess → Tetris → Checkers → Connect 4 → Ray Racer → Hockey</td></tr>
           </tbody>
         </table>
       </div>
@@ -648,7 +725,7 @@
           <tbody>
             <tr><td><kbd>F9</kbd></td><td>Console (same as <kbd>`</kbd>)</td></tr>
             <tr><td><kbd>F10</kbd></td><td>Binoculars (toggle zoom, no weapon sight)</td></tr>
-            <tr><td><kbd>F11</kbd></td><td>Sky Eye. While open, <kbd>Shift</kbd>+<kbd>1</kbd>–<kbd>4</kbd> focuses enemy types</td></tr>
+            <tr><td><kbd>F11</kbd></td><td>Sky Eye. While open, <kbd>Shift</kbd>+<kbd>1</kbd> JellyRover, <kbd>2</kbd> Zombie, <kbd>3</kbd> Normal, <kbd>4</kbd> Purple</td></tr>
             <tr><td><kbd>F12</kbd></td><td>SnapShotCam doc screenshot panel</td></tr>
             <tr><td><kbd>Shift</kbd>+<kbd>F12</kbd></td><td>PNG crop of open UI panel; else full-screen JPG</td></tr>
             <tr><td><kbd>Home</kbd> <em>(SnapShotCam open)</em></td><td>Sync fly camera to spinCageEyes</td></tr>
@@ -662,6 +739,7 @@
           <thead><tr><th>Key</th><th>Action</th></tr></thead>
           <tbody>
             <tr><td><kbd>Caps Lock</kbd></td><td>Game info balloon — <strong>whose turn</strong> during mini-games, or collapse/expand zone / Nav OPS / chess tips</td></tr>
+            <tr><td><kbd>G</kbd></td><td>Room chat, while you are in a Photon room. <kbd>Enter</kbd> sends. <kbd>Esc</kbd> closes. See <a href="#room-chat">Room chat</a></td></tr>
             <tr><td><kbd>Print Screen</kbd></td><td>Full main-camera JPG</td></tr>
             <tr><td><kbd>-</kbd> / <kbd>=</kbd></td><td>Camera zoom out / in</td></tr>
           </tbody>
@@ -684,7 +762,7 @@
             <tr><td><strong>Cage Bowl</strong></td><td>Lost bowl spawn (Modern) or skyscraper bowl (Quest)</td><td>Until you collect the bowl</td></tr>
             <tr><td><strong>Propeller</strong></td><td>Lost propeller spawn (Modern) or SnowyLavaRock (Quest)</td><td>Until you collect the propeller</td></tr>
             <tr><td><strong>Duck Raft</strong></td><td>Escape raft on the ocean</td><td>Until you board the raft</td></tr>
-            <tr><td><strong>FlipChip</strong></td><td>Checkers OPS coin in the 3D world</td><td>While the coin is spawned and not in your melee hand</td></tr>
+            <tr><td><strong>FlipChip</strong></td><td>A loose FlipChip, including the LED coin above the Blue Angel</td><td>While it is in the world and not in your hand. The LED icon is green or red with the flashing face</td></tr>
           </tbody>
         </table>
       </div>
@@ -769,7 +847,7 @@
             <tr><td>6</td><td>RB</td><td>Fire; single-fire select in Quick Menu</td></tr>
             <tr><td>7</td><td>LT</td><td>Throw sight loft down (Cannon Ball / BallChain)</td></tr>
             <tr><td>8</td><td>RT</td><td>Throw sight loft up (Cannon Ball / BallChain)</td></tr>
-            <tr><td>9</td><td>Back</td><td>Camera mode</td></tr>
+            <tr><td>9</td><td>Back</td><td>Cycle camera: Normal, Full Screen, Third Person</td></tr>
             <tr><td>10</td><td>Start</td><td>Quick Menu</td></tr>
             <tr><td>11</td><td>L3</td><td>Ghost Menu (no pause)</td></tr>
             <tr><td>12</td><td>R3</td><td>Precision Aim</td></tr>
@@ -802,6 +880,9 @@
         <strong>Nav OPS</strong>, <strong>Pool</strong>, <strong>Bowling</strong>,
         <strong>Tetris OPS</strong>, and <strong>Checkers OPS</strong>.
         <strong>Chess-Stele</strong> has <strong>two</strong> yellow pads — front and back.
+        <strong>Ray Racer</strong> and <strong>Hockey Arena</strong> do not use a yellow grid.
+        Ray Racer’s lobby is a HUD panel on the deck, and the whole deck is weapons-free.
+        Hockey’s lobby is <strong>Hockey Arena OPS</strong>, opened with <kbd>E</kbd> while you are inside any collider on the arena.
       </p>
       <p>
         Two extras (not the GameOPS menu):
@@ -820,15 +901,15 @@
         <table>
           <thead><tr><th>Input</th><th>Who</th><th>Action</th></tr></thead>
           <tbody>
-            <tr><td><kbd>Shift</kbd>+<kbd>LMB</kbd></td><td>Host only</td><td>Open a <strong>new game lobby</strong> (recruiting) — required before guests can join</td></tr>
-            <tr><td><kbd>RMB</kbd> or <strong>Join</strong> + <kbd>LMB</kbd></td><td>Guest</td><td><strong>Join</strong> while recruiting (on the yellow grid at the pool table)</td></tr>
-            <tr><td><kbd>LMB</kbd></td><td>Host only</td><td><strong>Start</strong> when players have joined</td></tr>
+            <tr><td>Aim <strong>Reset</strong> + <kbd>LMB</kbd></td><td>Host only</td><td>Open a <strong>new game lobby</strong> (recruiting) — required before guests can join</td></tr>
+            <tr><td>Aim <strong>Join</strong> + <kbd>LMB</kbd></td><td>Guest</td><td><strong>Join</strong> while recruiting (stand in the OPS zone)</td></tr>
+            <tr><td>Aim <strong>Start</strong> + <kbd>LMB</kbd></td><td>Host only</td><td><strong>Start</strong> when players have joined</td></tr>
           </tbody>
         </table>
       </div>
       <p>
-        <strong>Remotes</strong> can only <kbd>RMB</kbd> join — they cannot open the lobby, change mode, reset, or start.
-        The host runs the table / lane.
+        <strong>Remotes</strong> can only <strong>Join</strong> and open <strong>Settings</strong> for their own music volume —
+        they cannot open the lobby, change mode, reset, or start. The host runs the table / lane.
       </p>
 
       <div class="callout callout--tip">
@@ -837,9 +918,28 @@
         Pool also shows <strong>"{PlayerName} Wins!"</strong> on that header when a match ends.
         Press <kbd>Caps Lock</kbd> anytime to show the same info in the game info balloon.
         Live standings are on <kbd>F8</kbd> scores pages.
+        <kbd>Space</kbd> cycles Escaper, Bowling, Billiards, BaffleShots, Chess, Tetris, Checkers, Connect 4, Ray Racer, and Hockey.
         <br><br>
         <strong>Tetris exception:</strong> Tetris is <strong>live / simultaneous</strong> — it does not use turn banners.
         2P flashes <strong>Players Ready</strong> when Playing starts (host South Play Spot <strong>5s</strong> after Engage).
+        <br><br>
+        <strong>Who rides:</strong> a room can be larger than the match. The lobby size goes up to <strong>16</strong>.
+        <strong>Ray Racer</strong> plays the host and the first <strong>three</strong> others.
+        <strong>Hockey</strong> plays the host and the first <strong>seven</strong>.
+        Anyone past that is not spawned and is not on the rink or the deck.
+        A bar at the bottom of the screen has <strong>Previous</strong>, <strong>Escaper</strong>, and <strong>Next</strong>.
+        Previous and Next follow people who are actually playing. Escaper looks over the island.
+        When a seat opens, the camera goes back to their cage and they are sent to that game’s start.
+        The other mini-games still let the whole room play.
+        <br><br>
+        <strong>Game Roster</strong> sits on the HUD. Ray Racer fills the bars it has riders for.
+        Solo, with the cursor free, right-click a Ray Racer bar to open that bike’s color list.
+        Hockey uses all eight bars: Team A on the first four, Team B on the last four. Empty hockey bars say <strong>Open</strong>.
+        <br><br>
+        <strong>Score history:</strong> <kbd>F8</kbd> is the pause scores panel.
+        The <strong>3D GameScoreBoard</strong> at the south of the island is a separate history of solo and multiplayer scores, including Ray Racer and Hockey.
+        It does not open the F8 panel. A score stays on the computer that recorded it until those players share a room;
+        after that, both machines keep the merged list, so a visitor can look up scores from the other computer.
       </div>
 
       <figure>
@@ -848,38 +948,72 @@
       </figure>
     </section>
 
+    <section id="room-chat">
+      <h2>Room chat</h2>
+      <p>
+        In a Photon room, <kbd>G</kbd> opens a blue panel at the bottom left.
+        <kbd>Enter</kbd> sends. <kbd>Esc</kbd> closes.
+        The cursor is free and the bike does not steer while the panel is open.
+        A plain line goes to everyone in the room, including spectators.
+        You see it as <code>YourNick: hello</code>.
+      </p>
+      <p>
+        <code>@Nick hello</code> is a private whisper. Only you and that rider see it.
+        On Twitch, <code>@Nick</code> is a public mention; here it is not.
+        During a hockey match, <code>@ATeam</code>, <code>@BTeam</code>, and <code>@team</code> go only to that side.
+        <code>@team</code> is your own side. Outside a hockey match those words are ordinary room text.
+      </p>
+      <p>
+        <code>/me waves</code> shows as an action. <code>/who</code> lists the room.
+        <code>:puck:</code>, <code>:wave:</code>, and <code>:star:</code> are the emotes. Pasted emoji do not draw.
+      </p>
+      <p>
+        The host can <code>/ban @Nick</code> and <code>/unban @Nick</code>.
+        A ban kicks that rider and keeps them out of this room until they are unbanned.
+        You cannot ban yourself, and a guest who types <code>/ban</code> gets <strong>Host only</strong>.
+        <code>/ignore @Nick</code> hides that person’s chat on your computer only. It does not remove their bike.
+        <code>/unignore @Nick</code> brings it back. <code>/bans</code> and <code>/ignores</code> list those.
+        The same commands work in the <kbd>F9</kbd> console.
+        When a line arrives, that rider’s Game Roster bar flashes.
+      </p>
+      <figure>
+        <img src="images/54-room-chat.jpg" alt="Blue room chat panel with a scrolling log and a line at the bottom" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Room chat — <code>54-room-chat.jpg</code>. Prefer <kbd>Shift</kbd>+<kbd>F12</kbd>.</figcaption>
+      </figure>
+    </section>
+
     <!-- POOL -->
     <section id="pool">
       <h2>Pool (15-Ball / 9-Ball)</h2>
-      <p>Stand on the <strong>yellow grid</strong> at the table. Mode and short rules appear on the <strong>pool board</strong>.</p>
+      <p>Stand in the <strong>PoolOPS</strong> zone at the table. PoolOPS has <strong>two screens</strong>: screen 1 is the board (lobby, turn, players), screen 2 is the full rules for the selected mode. Aim a button with the crosshair and press <kbd>LMB</kbd> — no right-click anywhere on the terminal.</p>
+      <p>Play Pool (lobby / venue start) seats <strong>host/solo at PoolOPS1</strong> and <strong>Player 2 at PoolOPS2</strong> (facing PoolOPS). When the match starts, both cages warp onto the table (<strong>PoolPlayer1</strong> / <strong>PoolPlayer2</strong>; solo uses Player 1).</p>
 
       <h3>Host controls</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Input</th><th>Action</th></tr></thead>
           <tbody>
-            <tr><td><strong>Mouse wheel</strong></td><td>Cycle <strong>Free</strong> → <strong>8-Ball Last</strong> → <strong>Solids &amp; Stripes</strong> → <strong>9-Ball Arcade</strong> → <strong>9-Ball Classic</strong> (idle or recruiting)</td></tr>
-            <tr><td><kbd>RMB</kbd> (Idle)</td><td>Cycle mode (same as one wheel step)</td></tr>
-            <tr><td><kbd>Shift</kbd>+ wheel</td><td>Cycle <strong>solo challenge</strong> overlay (solo only; ignored in multiplayer lobbies)</td></tr>
-            <tr><td><kbd>Shift</kbd>+<kbd>LMB</kbd></td><td>Open a new lobby / re-rack recruiting</td></tr>
-            <tr><td><kbd>Shift</kbd>+<kbd>RMB</kbd></td><td><strong>Reset</strong> — leave finished or in-progress match; open a new lobby so mode can be changed again</td></tr>
-            <tr><td><kbd>LMB</kbd></td><td>Start the match (or open a new lobby if the match already ended)</td></tr>
-            <tr><td><kbd>RMB</kbd> (Recruiting)</td><td>Join the lobby</td></tr>
+            <tr><td>Aim <strong>Start</strong> + <kbd>LMB</kbd></td><td>Start the match (or open a new lobby if the match already ended)</td></tr>
+            <tr><td>Aim <strong>Reset</strong> + <kbd>LMB</kbd></td><td><strong>Reset</strong> — leave finished or in-progress match; open a new lobby so mode can be changed again</td></tr>
+            <tr><td>Aim <strong>Settings</strong> + <kbd>LMB</kbd></td><td>Settings screen — aim the music slider + wheel for your own volume; the music button pauses / resumes</td></tr>
+            <tr><td><strong>Mouse wheel</strong> on the board (no button under the crosshair)</td><td>Cycle <strong>Free</strong> → <strong>8-Ball Last</strong> → <strong>Solids &amp; Stripes</strong> → <strong>9-Ball Arcade</strong> → <strong>9-Ball Classic</strong> (idle or recruiting)</td></tr>
+            <tr><td><kbd>Shift</kbd>+ wheel on the board</td><td>Cycle <strong>solo challenge</strong> overlay (solo only; ignored in multiplayer lobbies)</td></tr>
+            <tr><td><kbd>R</kbd></td><td>Practice re-break — re-rack without touching the lobby</td></tr>
           </tbody>
         </table>
       </div>
 
       <h3>Remote players</h3>
       <ul>
-        <li><kbd>RMB</kbd> (Recruiting) or <strong>Join</strong> + <kbd>LMB</kbd> — join only (must be on the yellow grid at the table)</li>
-        <li>Before host opens lobby — HUD: <em>Waiting for host to open lobby (LMB at pool switch)</em></li>
-        <li>Cannot reset, change mode, or start (toast: <em>Host only — use RMB to join</em>)</li>
+        <li>Aim <strong>Join</strong> + <kbd>LMB</kbd> — join only (the Start button reads <strong>Join</strong> for guests)</li>
+        <li>Aim <strong>Settings</strong> + <kbd>LMB</kbd> — your own music volume only</li>
+        <li>Before host opens lobby — HUD: <em>Waiting for host to open the lobby at PoolOPS</em></li>
+        <li>Cannot reset, change mode, or start (toast: <em>Host only — aim Start to join</em>)</li>
       </ul>
 
       <div class="callout callout--warn">
         <strong>Mode lock</strong>
-        Once a match is <strong>playing</strong>, mode cannot be changed until the host opens a new lobby with
-        <kbd>Shift</kbd>+<kbd>RMB</kbd> or <kbd>Shift</kbd>+<kbd>LMB</kbd>.
+        Once a match is <strong>playing</strong>, mode cannot be changed until the host aims <strong>Reset</strong> to open a new lobby.
       </div>
 
       <h3>Modes</h3>
@@ -917,9 +1051,18 @@
         <strong>Scratch / foul (important split):</strong>
       </p>
       <ul>
-        <li><strong>Cue scratch</strong> (foul + re-spot + ball-in-hand): cue goes down a <strong>pocket</strong> into the return bay, <strong>or</strong> stays off the felt for about <strong>3 seconds</strong>. Brief pocket airtime is fine. Cage bumps that shove the cue are not treated as pocket scratches.</li>
+        <li><strong>Cue scratch</strong> (foul + re-spot + ball-in-hand): cue goes down a <strong>pocket</strong> into the return bay, <strong>or</strong> stays off the felt for about <strong>3 seconds</strong>. Brief pocket airtime is fine. Cage bumps that shove the cue are not treated as pocket scratches. A ball you legally pocketed on that same shot <strong>still scores</strong>. The cue scratch does not turn it into a no-points sink.</li>
         <li><strong>Object ball off the table</strong> (~3s off both felt and bay, e.g. on the floor): scratched / no points (red <strong>X</strong> on the header). The <strong>cue is not</strong> re-spotted and may keep rolling until it stops — that alone is not ball-in-hand.</li>
-        <li>A ball confirmed in the <strong>return bay</strong> is a <strong>sink</strong> (green check on the header).</li>
+        <li>A ball confirmed in the <strong>return bay</strong> is a <strong>sink</strong> (green check on the header). Wrong group, an early 8, or a ball that already left the table is <em>Sunk (illegal, no points)</em> or <em>Sunk (was scratched, no points)</em> — that reason is the ball, not the cue.</li>
+      </ul>
+      <p><strong>HUD when the balls stop:</strong></p>
+      <ul>
+        <li>Cue down a pocket or off the table: everyone sees one line. Cue only: <em>Cue scratched</em>. Cue plus a ball that scored: <em>Name sunk Solids #3 — cue scratched</em>. Cue plus a ball that already scored nothing: <em>Sunk (illegal, no points) Solids #3 — cue scratched</em>.</li>
+        <li>The player who places the cue gets that same line plus <em>stand on cue + SHIFT to move once</em> (9-ball: <em>anywhere</em>). The other player does not get the place instruction.</li>
+        <li>A 9-ball win names the player (<em>Name pocketed the 9</em>, <em>Name — golden break!</em>). The header is <em>Name Wins!</em>. An early 8 in solo is <em>Name lost</em>; in multiplayer the opponent gets <em>Name Wins!</em>.</li>
+        <li>Solo miss: <em>Foul</em> or <em>Legal break</em> (the turn does not say it passed). Two players: <em>Foul — turn passed</em> / <em>Legal break — turn passed</em>.</li>
+        <li>Shooting before Start: host <em>Start the match first</em>, guest <em>Waiting for host to start</em>. During a match, the other player sees <em>Not your turn (Pool)</em>.</li>
+        <li>Cue still rolling: <em>Wait for the cue to stop</em>.</li>
       </ul>
       <p>
         <strong>Header icons:</strong> the table header shows all <strong>15</strong> ball icons.
@@ -956,20 +1099,36 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
     <section id="bowling">
       <h2>Big Dumb Bowling</h2>
       <p>Stand on the <strong>yellow grid</strong> at the lane.</p>
+      <p>Play Bowling (lobby / venue start) seats <strong>host/solo at BowlingOPS1</strong> and <strong>Player 2 at BowlingOPS2</strong> (facing BowlingOPS). When the match starts, both cages warp onto <strong>BowlingPlatform</strong> (<strong>BowlingPlayer1</strong> / <strong>BowlingPlayer2</strong>; solo uses Player 1).</p>
+      <p>During a match, only the current thrower can fire weapons while inside <strong>bowlingPlayZone</strong> on <strong>BowlingPlatform</strong> (the raised pad with steps; the volume is tall enough to jump for trick shots). The other player is blocked until their turn.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Input</th><th>Who</th><th>Action</th></tr></thead>
           <tbody>
-            <tr><td><kbd>Shift</kbd>+<kbd>LMB</kbd></td><td>Host only</td><td>Open a new bowling lobby</td></tr>
-            <tr><td><kbd>LMB</kbd></td><td>Host only</td><td>Start the match</td></tr>
-            <tr><td><kbd>RMB</kbd> (Recruiting)</td><td>Anyone</td><td>Join</td></tr>
+            <tr><td><strong>Start</strong> + <kbd>LMB</kbd></td><td>Host / solo</td><td>Offline: 10-frame game. In a room: rack pins and wait</td></tr>
+            <tr><td><strong>Join</strong> + <kbd>LMB</kbd></td><td>Remote</td><td>Join — the match starts</td></tr>
+            <tr><td><strong>Reset</strong> + <kbd>LMB</kbd></td><td>Host</td><td>Lobby reset</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Remotes: <kbd>RMB</kbd> join only (cannot open lobby or start).</p>
+      <p>Player 2 aims <strong>Join</strong> on the OPS panel (no Shift, no RMB).</p>
       <p>
         Each player bowls a <strong>full frame</strong> (up to two balls, or three in the 10th; a strike ends early),
         then the turn passes. Scoreboard and <kbd>F8</kbd> bowling page show roster and turn.
+      </p>
+      <p>
+        <strong>One shot per ball</strong>, exactly like a real roll. Every time the pins reset and it is your turn you
+        get <strong>one</strong> shot — it counts whatever it does, and you cannot shoot again until the pins reset, no
+        matter how many are left standing. That gives you <strong>2 balls per frame</strong> and <strong>3 in the
+        10th</strong>. A shot that topples <strong>nothing</strong> (including a graze that only rattles the rack) is a
+        <strong>gutterball</strong>: it scores <strong>0</strong>, is marked <code>-</code> on the card, and the lane
+        calls <em>Gutterball</em> on screen for 7 seconds before fading.
+      </p>
+      <p>
+        A gutterball on ball 1 does not end the frame — the pins cycle and you still get ball 2 at the remaining rack, so
+        <strong>spares are still available</strong>. Two gutterballs close the frame as an open frame. While a shot is
+        live or the pins are cycling the trigger is blocked (<em>Wait for your ball</em> / <em>Wait for the pins to
+        reset</em>). Jump trick shots remain legal; there is no foul line.
       </p>
       <div class="fig-grid fig-grid--2">
         <figure>
@@ -1007,9 +1166,9 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         <table>
           <thead><tr><th>Input</th><th>Action</th></tr></thead>
           <tbody>
-            <tr><td><strong>Mouse wheel</strong></td><td>Cycle <strong>Marathon</strong> → <strong>Sprint</strong> → <strong>Ultra</strong> → <strong>2P Co-op</strong> → <strong>Vs Race</strong> → <strong>Vs Attack</strong> → <strong>Ultra Duel</strong> — locked while a match is active</td></tr>
+            <tr><td><strong>Mouse wheel</strong></td><td><strong>Offline:</strong> Marathon → Sprint → Ultra → 2P Co-op → Vs Race → Vs Attack → Ultra Duel. <strong>In a Photon room:</strong> 2P Co-op → Vs Race → Vs Attack → Ultra Duel only. A solo mode selected before joining switches to <strong>2 Player Co-op</strong>. Locked while a match is active</td></tr>
             <tr><td>Aim <strong>Start</strong> + <kbd>LMB</kbd></td><td><strong>Engage</strong> (music on, board ready). Host then stands on <strong>South Play Spot</strong> for <strong>5 seconds</strong> → <strong>Playing</strong>. Leave South during the 5s to cancel. Non-host Start claims <strong>North</strong></td></tr>
-            <tr><td>Aim <strong>Settings</strong> + <kbd>LMB</kbd></td><td>Toggle OPS ↔ Settings. <strong>Level 1–29</strong> + arena <strong>1/2 · 3/4 · Full</strong> (host only); <strong>Music</strong> (local — aim slider + wheel)</td></tr>
+            <tr><td>Aim <strong>Settings</strong> + <kbd>LMB</kbd></td><td>Toggle OPS ↔ Settings. <strong>Level 1–29</strong> (host only); arena <strong>1/2 · 3/4 · Full</strong> (local per player); <strong>Music</strong> (local — aim slider + wheel)</td></tr>
             <tr><td>Aim <strong>Reset</strong> + <kbd>LMB</kbd></td><td>Clear board / corpse → lobby; pick a new mode</td></tr>
           </tbody>
         </table>
@@ -1040,7 +1199,8 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       <h3>Match flow</h3>
       <ul>
         <li><strong>Engage → South pad 5s → Playing</strong> (host). Already on your pad → clamp immediately; else <strong>3s</strong> settle. Then <strong>0.5s</strong> ready wait → first piece (A/D ready).</li>
-        <li><strong>Marathon</strong> — solo well; sky score line. Survive as long as you can.</li>
+        <li><strong>Marathon, Sprint, and Ultra</strong> are offline only. In a room the host can start only the four 2-player modes.</li>
+        <li><strong>Marathon</strong> — solo well; sky score line. Survive as long as you can. Offline only.</li>
         <li><strong>Sprint</strong> — first to <strong>40 lines</strong>; elapsed time; <strong>Sprint Clear!</strong>; top-out → Game Over.</li>
         <li><strong>Ultra</strong> — <strong>2:00</strong> clock; <strong>Time's Up!</strong> keeps score; top-out → Game Over.</li>
         <li><strong>2P Co-op</strong> — shared <strong>20×20</strong> (no mid wall), two pieces. Team <strong>40 lines</strong> → <strong>Co-op Clear!</strong>; either top-out → shared Game Over. Bright = yours, dim = other.</li>
@@ -1074,7 +1234,7 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       </p>
       <p>
         In 2P, guests see the same mode, board, and pieces; Player 2 joins North (non-host <strong>Start</strong>).
-        Start level and arena scale are host-set; music volume stays local.
+        Start level is host-set; arena scale and music volume stay local (each player at South or North OPS).
         <strong>Play Tetris</strong> (and a live venue switch into Tetris) seats the
         <strong>host South</strong> (same pad as solo) and <strong>Player 2 North</strong>.
         Extra players stand near North.
@@ -1106,10 +1266,12 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         <strong>back</strong> is the 2D board. Step on either grid for that UI; weapons stay off while you are on the pad.
       </p>
       <p>
-        Short version: use the <strong>front stele</strong> for solo Level / Puzzles / Custom / Leorik.
+        Short version: <strong>Play Chess</strong> venue start seats host/solo at <strong>ChessOPS1</strong> and Player 2 at <strong>ChessOPS2</strong> (facing the stele).
+        Use the <strong>front stele</strong> for solo Level / Puzzles / Custom / Leorik.
         <strong>2P</strong> (Play Chess venue or a live match): Level / Puzzles / Custom / Leorik are hidden.
         Host <strong>START</strong> begins a new 2P game and warps both cages to the board seats
-        (<strong>White's Turn</strong>; host = White, guest = Black; lion hidden).
+        (<strong>ChessPlayer1</strong> / <strong>ChessPlayer2</strong>; <strong>White's Turn</strong>; host = White, guest = Black; lion hidden).
+        Solo START uses Player 1.
         Host <strong>Clear</strong> resets the 32 pieces <strong>in place</strong> (no second warp).
         <kbd>Backspace</kbd> takes back the last move once, then play a new move.
         The back pad is the optional 2D board only. Labels / Predict / Style / music stay local.
@@ -1144,7 +1306,7 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         <table>
           <thead><tr><th>Control</th><th>Who</th><th>Action</th></tr></thead>
           <tbody>
-            <tr><td><strong>Start</strong></td><td>Host / solo</td><td>Begin the match — board re-racks, variant locks, match music, both cages warp to seats</td></tr>
+            <tr><td><strong>Start</strong></td><td>Host / solo</td><td>Begin the match — board re-racks, variant locks, match music, both cages warp to board seats (<code>CheckersPlayer1</code> / <code>CheckersPlayer2</code>)</td></tr>
             <tr><td><strong>Join</strong> <em>(Start relabels)</em></td><td>Remote in a room</td><td>Marks lobby presence — <strong>no seat warp</strong> until host <strong>Start</strong></td></tr>
             <tr><td><strong>FlipChip</strong></td><td>Anyone at OPS</td><td>Spawns coin on OPS screen — Melee <kbd>RMB</kbd> pickup, <kbd>LMB</kbd> toss; top color sets Player1/Host on <strong>Start</strong> (see FlipChip above)</td></tr>
             <tr><td><strong>Reset</strong></td><td>Host / solo</td><td>Lobby reset + unlock variant</td></tr>
@@ -1186,11 +1348,14 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
       <p>
         You must be inside the board play zone. Weapons and <kbd>RMB</kbd> zoom stay off whenever you touch a piece
         or square, or stand in the zone <strong>looking down</strong>.
+        Play stays on the <strong>3D board</strong> — stand, aim, <kbd>RMB</kbd>, <kbd>LMB</kbd>.
+        <kbd>Tab</kbd> opens <strong>Quick2DCheckersBoard</strong>, a live 2D display of the same squares, pieces, Crown on kings, and markers
+        (blue = cage square, green = legal / aimed, orange = pending only). <kbd>Tab</kbd> again closes it. It does not select or move pieces.
       </p>
       <ol>
         <li><strong>Stand on one of your pieces</strong> to select it — a <strong>blue circle</strong> marks that square.</li>
         <li>Markers appear: <strong>green sphere</strong> (GreenEmit) = a square you can land on, <strong>green circle</strong> = a piece you can capture. The end of a multi-jump gets the raised far sphere.</li>
-        <li><strong>Aim</strong> a marker to preview that line; it brightens. Aiming a middle hop takes only that much of the chain, aiming the <strong>far sphere</strong> takes the whole chain.</li>
+        <li><strong>Aim</strong> a marker to preview that line; it brightens (still green). Aiming a middle hop takes only that much of the chain, aiming the <strong>far sphere</strong> takes the whole chain.</li>
         <li><kbd>RMB</kbd> locks the preview as <strong>pending</strong> — orange sphere and circle, status reading <code>Pending A3 -&gt; C5 x2 (LMB commit)</code>.</li>
         <li><kbd>LMB</kbd> commits and the piece hops square by square. <kbd>Backspace</kbd> cancels the pending line; <kbd>RMB</kbd> again clears the pending line and the selection.</li>
       </ol>
@@ -1219,7 +1384,10 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         without wiping the board.
       </p>
       <p>
-        <strong>Play Checkers</strong> seats Player 1 on Black and Player 2 on Red.
+        <strong>Play Checkers</strong> (lobby / venue start) seats <strong>host/solo at CheckersOPS1</strong> and
+        <strong>Player 2 at CheckersOPS2</strong> (facing CheckersOPS). When the match starts, both cages warp onto the board
+        (<strong>CheckersPlayer1</strong> Black / south, <strong>CheckersPlayer2</strong> Red / north; FlipChip can swap those colors).
+        Solo Start uses the Player 1 color seat.
       </p>
       <div class="fig-grid fig-grid--2">
         <figure>
@@ -1234,7 +1402,184 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
           <img src="images/32-checkers-coin-toss.jpg" alt="FlipChip on CheckersOPS screen before Start — melee toss sets Player1/Host color" loading="lazy" onerror="this.classList.add('missing')">
           <figcaption>Pre-game FlipChip — <code>32-checkers-coin-toss.jpg</code> (optional)</figcaption>
         </figure>
+        <figure>
+          <img src="images/35-checkers-tab-2d.jpg" alt="Quick2DCheckersBoard Tab overlay during a checkers game in progress" loading="lazy" onerror="this.classList.add('missing')">
+          <figcaption><kbd>Tab</kbd> Quick2DCheckersBoard mid-game — <code>35-checkers-tab-2d.jpg</code></figcaption>
+        </figure>
       </div>
+    </section>
+
+    <!-- CONNECT 4 -->
+    <section id="connect4">
+      <h2>Connect 4</h2>
+      <p>
+        <strong>Play Connect 4</strong> seats the host / solo at <strong>Connect4OPS1</strong> and Player 2 at
+        <strong>Connect4OPS2</strong>, south of the Cooling Towers. <strong>Start</strong> warps them to
+        <strong>Connect4Player1</strong> (west, yellow) and <strong>Connect4Player2</strong> (east, red).
+      </p>
+      <p>
+        Stand in <strong>Connect4OPS</strong>. Aim <code>connect4FlipChipButton</code> once before Start if you want to swap seats.
+        No toss: the host is Player 1 (yellow) and moves first. Red side up: the guest takes that seat.
+        On the platform, left-click aims a column and drops your chip — weapons stay off, and <kbd>RMB</kbd> zoom still works.
+        A full column does nothing. Yellow always moves first; the coin only decides who stands there.
+        Host <strong>Reset</strong> clears the rack and the toss.
+      </p>
+    </section>
+
+    <!-- RAY RACER -->
+    <section id="rayracer">
+      <h2>Ray Racer</h2>
+      <p>
+        <strong>Play Ray Racer</strong> is an off-island light-cycle match. Choosing it puts you on your section of the deck and on the bike.
+        Up to four riders, one quadrant each: the host and the first three others. Anyone past that spectates (see <strong>Who rides</strong> above).
+        The deck sits in a star box, away from Arcade Island.
+        You stay on the bike until the match ends or you leave for another game.
+        The whole deck is weapons-free: guns and melee do not fire there.
+      </p>
+      <p>
+        The match does not start by itself. A green <strong>READY</strong> button appears.
+        Click it, or press <kbd>Enter</kbd> or gamepad <kbd>A</kbd>.
+        In a room the button switches to <strong>WAITING</strong> until every rider has pressed Ready.
+        Solo starts the countdown on that one press.
+        <kbd>E</kbd> while you are waiting hides Ready and opens the lobby. Closing the lobby brings Ready back.
+      </p>
+      <figure>
+        <img src="images/47-rayracer-ready.jpg" alt="Third-person view of the Ray Racer deck with the green Ready button" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Ready on the deck — <code>47-rayracer-ready.jpg</code> (third person, green <strong>READY</strong>, bike in frame)</figcaption>
+      </figure>
+      <p>
+        Then the bikes stay parked through <strong>GRID</strong>, a red <strong>3</strong>, <strong>2</strong>, <strong>1</strong>, and green <strong>GO</strong>.
+        Hold the gas from <strong>2</strong> through <strong>GO</strong> for a <strong>ROCKET START</strong> (a short boost).
+        Gas on the red <strong>3</strong> is a <strong>BURNOUT</strong> (a short crawl).
+        The engine hum follows your speed and goes quiet while the game is paused.
+      </p>
+      <p>
+        The match opens in <strong>third person</strong>.
+        <kbd>V</kbd> (gamepad Back) cycles <strong>Normal</strong>, <strong>Full Screen</strong>, and <strong>Third Person</strong>.
+        On the deck the number keys do not change weapons.
+        <kbd>1</kbd> is the chase camera, <kbd>2</kbd> left, <kbd>3</kbd> right, <kbd>4</kbd> front, <kbd>5</kbd> top down.
+        Opening the lobby does not snap the camera back.
+      </p>
+      <p>
+        <kbd>E</kbd> on the deck opens <strong>RayRacerOPS</strong> on the same camera. The rider stops so you can click, and the cursor unlocks.
+        <kbd>E</kbd> again closes the panel and gives you the bike back. You do not leave the arena.
+        <kbd>ESC</kbd> while the panel is open closes it and stays on the deck.
+        <kbd>ESC</kbd> when the panel is already closed opens Game Selection, and that is the step that leaves.
+      </p>
+      <h3>Settings</h3>
+      <p>
+        <strong>Settings</strong> swaps the rules page and the settings page. The rules-page header shows the ride style.
+      </p>
+      <ul>
+        <li>Aim the mode button and roll the mouse wheel for <strong>Free Ray</strong> or <strong>Classic Tron</strong>.</li>
+        <li><strong>Theme</strong> is host-only. Click it, or aim it and roll the wheel, to cycle <strong>Amber Circuit</strong>, <strong>Marble</strong>, <strong>Classic Tron</strong>, <strong>Violet Night</strong>, <strong>Emerald</strong>, and <strong>Chrome</strong>. That recolors the floor, the grid lines, the border, and the pillars.</li>
+        <li>The sky slider is host-only and picks one of six star boxes: Shine Blue, Shine Black, Nebula Blue, Nebula Black, Common Blue, Common Black.</li>
+        <li>The grid-line slider and the floor-fade slider are host-only and stay independent of the theme.</li>
+        <li>The music slider and the <strong>RayRacerBikeColor</strong> gallery are yours. The computer bike is always grey, and its ray is white.</li>
+        <li><strong>Start</strong> and <strong>Reset</strong> are host-only. Both begin a fresh round from the section seats, show Ready again, and close the lobby.</li>
+      </ul>
+      <figure>
+        <img src="images/48-rayracer-ops.jpg" alt="Ray Racer settings with mode, theme, and sky" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>RayRacerOPS settings — <code>48-rayracer-ops.jpg</code> (mode, Theme, sky, grid, floor). Prefer <kbd>Shift</kbd>+<kbd>F12</kbd>.</figcaption>
+      </figure>
+      <h3>Riding</h3>
+      <ul>
+        <li><kbd>W</kbd> forward, <kbd>S</kbd> slow reverse, <kbd>A</kbd> / <kbd>D</kbd> steer.</li>
+        <li><strong>Free Ray</strong> — mouse look also turns the bike.</li>
+        <li><strong>Classic Tron</strong> — travel stays on the compass. A left or right press is saved, and the bike turns 90 degrees only when it reaches the next even grid line (every 2 units). Odd positions do not turn. The view eases into the new heading.</li>
+        <li>Hold <kbd>Shift</kbd> while going forward to boost. The engine overheats if you hold it too long, then cools before boost works again.</li>
+        <li>A wall, a pillar, or a light-cycle beam stops you. The camera orbits that rider while everyone else keeps moving, and the beam sinks.</li>
+        <li><strong>Continue</strong> puts you back in the race where you stopped when a life remains, with no new countdown.</li>
+        <li><strong>Restart</strong> on that panel starts another Ray Racer round and returns to Ready. It does not dump you to Game Selection.</li>
+      </ul>
+      <figure>
+        <img src="images/49-rayracer-ride.jpg" alt="Classic Tron ride with a square trail, pillars, and the grey computer bike" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>On the grid — <code>49-rayracer-ride.jpg</code> (square trail, a pillar, grey computer bike with a white ray)</figcaption>
+      </figure>
+      <p>
+        The default match is <strong>one life</strong>, so a crash usually starts a new round.
+        Console <code>/tron</code> sets one life for the next match. <code>/raylives</code> sets <strong>three lives</strong>.
+        Off the deck, in a normal Escaper game, <kbd>E</kbd> mounts or dismounts a Ray Racer bike you have found. <kbd>E</kbd> does nothing if you have not found one.
+        A bike parked on the GamePlane is scale <strong>1</strong>. Scale <strong>10</strong> is only the socket on the Ray Racer deck.
+      </p>
+    </section>
+
+    <!-- HOCKEY -->
+    <section id="hockey">
+      <h2>Hockey Arena</h2>
+      <p>
+        <strong>Play Hockey</strong> seats the room at the eight spots around the rink
+        (<strong>HockeyPlayer1</strong> through <strong>HockeyPlayer8</strong>).
+        Walk onto a team stand to join that side.
+        The host is always captain of <strong>Team A</strong>, even if they walk to the other stand.
+        The first rider who stays on <strong>Team B</strong> is that side’s captain.
+        Console <code>/hockey</code> turns the arena on if it was left inactive for a build.
+      </p>
+      <p>
+        Every bike keeps its own body color.
+        The wheels, and the net that team is defending, use the captain’s ray color.
+        You can tell the teams apart by the wheels and by which net is glowing.
+      </p>
+      <figure>
+        <img src="images/50-hockey-rink.jpg" alt="Hockey rink with both nets glowing and the puck at center" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>The rink — <code>50-hockey-rink.jpg</code> (both nets, puck at center)</figcaption>
+      </figure>
+      <p>
+        <kbd>E</kbd> inside any collider on the arena opens <strong>Hockey Arena OPS</strong>, including while a game is going.
+        The cursor comes out. <kbd>E</kbd> again closes the panel. During a live game the bike keeps moving.
+        <kbd>E</kbd> does not get you off the bike while you are in those colliders.
+        The team stands still count, even though they sit on the ground outside the raised arena.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Control</th><th>Who</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Start</strong></td><td>Host</td><td>Face-off. A <strong>3</strong>, <strong>2</strong>, <strong>1</strong>, <strong>GO</strong> parks the riders. The puck drops onto center ice, then it is live</td></tr>
+            <tr><td><strong>Reset</strong></td><td>Host</td><td>Back to the lobby marks. Bots you already added stay on the roster</td></tr>
+            <tr><td><strong>Fill open seats</strong></td><td>Host</td><td>Adds bots to the shorter side until a side is full or seven bots are in</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure>
+        <img src="images/51-hockey-ops.jpg" alt="Hockey Arena OPS with Start, Reset, and Fill open seats" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Hockey Arena OPS — <code>51-hockey-ops.jpg</code>. Prefer <kbd>Shift</kbd>+<kbd>F12</kbd>.</figcaption>
+      </figure>
+      <p>
+        First team to <strong>3</strong> wins. That number is <strong>Goals To Win</strong> on the arena.
+        A goal toast reads <strong>Red scores for A Team.  A 1  B 0</strong> (or <strong>B Team</strong> when the puck beats A’s net).
+        If nobody touched the puck, the line is <strong>Goal for A Team</strong>.
+        The sky board, <strong>HockeyArenaSkyText</strong>, keeps <strong>Escaper League Hockey</strong> and the numbers <strong>A 1&nbsp;&nbsp;&nbsp;&nbsp;B 0</strong>.
+        It adds <strong>A wins</strong> when the match ends, and it turns to face you from either end of the rink.
+        The HUD score text shows the same <strong>A / B</strong> numbers.
+        <kbd>F8</kbd> → <strong>HOCKEY — SCORES</strong> keeps the winning humans. Bots are not recorded.
+      </p>
+      <h3>On the bike</h3>
+      <p>Weapons and zoom stay off during a live match on the rink.</p>
+      <ul>
+        <li>Drive into the puck and it leaves along the nose. That is a straight nudge or slap. <kbd>LMB</kbd> kicks left. <kbd>RMB</kbd> kicks right.</li>
+        <li>Cruise speed is a nudge. Full speed is a slap, capped by the arena’s max puck speed. Between those, the kick grows with the bike.</li>
+        <li>Bots do the same. Lined up on the enemy net, the kick is straight. Off that line, they pick a side.</li>
+        <li>You and any online rider can leave or enter through the nets. Bots cannot drop below the ice.</li>
+        <li>A puck that leaves the play zone respawns at center. A shot that beats the goal mouth, or the stand just behind that mouth, scores for the other team.</li>
+      </ul>
+      <h3>Roster</h3>
+      <p>Once <kbd>E</kbd> has freed the cursor, right-click a bar:</p>
+      <ul>
+        <li><strong>Open</strong> → <strong>Activate</strong>. That adds a bot on that team.</li>
+        <li>A bot → <strong>Color</strong> and <strong>Deactivate</strong>.</li>
+        <li>A real player has no menu.</li>
+      </ul>
+      <p>
+        Four riders a side, and the host counts as one.
+        The even game is the host plus <strong>seven</strong> bots: three beside the host, four on the other side.
+        In multiplayer the host can fill any seat that is not already a person, up to those same caps.
+        A solo lineup (which side, which color) is remembered the next time you play.
+        A multiplayer room can use that saved lineup. Changes you make in a room are not written back over it.
+      </p>
+      <figure>
+        <img src="images/52-hockey-roster.jpg" alt="Game Roster split into Team A and Team B, with the Color and Activate menu" loading="lazy" onerror="this.classList.add('missing')">
+        <figcaption>Game Roster — <code>52-hockey-roster.jpg</code> (Team A, Team B, and the right-click menu)</figcaption>
+      </figure>
     </section>
 
     <!-- BAFFLESHOTS -->
@@ -1301,14 +1646,18 @@ AngelBraceToo Sunk: ST-9, ST-11, 8</pre>
         <li><strong>BallChain (<kbd>0</kbd>)</strong> — low-velocity toss that lays climbable steps as it flies; keep shooting to add links; melee a segment to clear a line.</li>
         <li><strong>Yellow GameOPS zones</strong> — step on the yellow grid at Nav OPS, Pool, Bowling, Tetris OPS, Checkers OPS, or either Chess-Stele pad: that game’s UI is on and weapons are off. <strong>Tetris Play Spot</strong> is a separate no-weapon pad for moving pieces. On a checker piece or square — or anywhere on the checkers board while you <strong>look down</strong> — weapons and <kbd>RMB</kbd> zoom are off so hops can use RMB. At Nav OPS, <kbd>RMB</kbd> zoom is blocked only during fleet setup (not during battle).</li>
         <li><strong>Direction indicators</strong> — quest items clockwise in the order you get them (bowl, propeller, duck raft); <strong>FlipChip</strong> is on the same band but is not a quest item. Icons slide with bearing and scale with distance; DetPack has inventory only, no arrow.</li>
-        <li><strong>Scores</strong> — <kbd>F8</kbd> open, <kbd>Space</kbd> cycle (includes <strong>Tetris</strong>).</li>
+        <li><strong>Scores</strong> — <kbd>F8</kbd> open, <kbd>Space</kbd> cycle (Escaper, Bowling, Billiards, BaffleShots, Chess, Tetris, Checkers, Connect 4, Ray Racer, Hockey). The south <strong>GameScoreBoard</strong> is the 3D history and does not open F8. Shared rooms merge that history so a visitor can read scores recorded on another computer.</li>
         <li><strong>Whose turn / who won</strong> — top HUD ~7s (Pool also shows <strong>Wins!</strong>); <kbd>Caps Lock</kbd> for the balloon. <strong>Tetris</strong> is live — 2P shows <strong>Players Ready</strong>, then <strong>Wins!</strong> / <strong>You Lose!</strong> / <strong>Draw!</strong> / <strong>Co-op Clear!</strong> / <strong>Sprint Clear!</strong> / <strong>Time's Up!</strong>.</li>
         <li><strong>Mini-game host</strong> — only the host (the player who started the room) opens, starts, resets, and (Pool) changes mode; everyone else <kbd>RMB</kbd> joins while recruiting (<strong>Pool:</strong> host <kbd>Shift</kbd>+<kbd>LMB</kbd> opens lobby first; guest <kbd>RMB</kbd> or <strong>Join</strong> on the yellow grid at the table). <strong>Live venue switch:</strong> host <strong>Game Mode</strong> hops Play / Explore mid-session (combat modes = New Game). <strong>Tetris:</strong> host Engage at OPS, then <strong>South Play Spot</strong> for <strong>5s</strong> to start Playing; guests claim North via non-host <strong>Start</strong>; spawn host South / guest North. <strong>BaffleShots:</strong> East host / West guest; Confirm then host Start (Waiting… if the host locked first); fog until hits; host owns Classic / Group Sink / Repulse Mines settings. <strong>Checkers:</strong> host owns variant wheel, Start, Reset; guest <strong>Join</strong> marks lobby; <strong>FlipChip</strong> button + pre-game toss sets Player1/Host color before <strong>Start</strong>. <strong>Chess 2P:</strong> host START / Clear only; no Level / Puzzles / Custom / Leorik on the stele.</li>
-        <li><strong>Checkers</strong> — solo is always vs AI (Player1 = you), a multiplayer room is always 2P. Wheel the OPS panel for the variant (locks on Start or the first move, unlocks on host Reset). <strong>FlipChip</strong> before <strong>Start</strong>: top color = Player1/Host color (default Black). On the board: stand on a piece (<strong>blue</strong>), aim a <strong>green sphere</strong> to land or a <strong>green circle</strong> to capture, <kbd>RMB</kbd> to pend (<strong>orange</strong>), <kbd>LMB</kbd> to commit, <kbd>Backspace</kbd> to cancel. Aim the far sphere to take a whole jump chain; once a chain starts you must finish it.</li>
+        <li><strong>Checkers</strong> — solo is always vs AI (Player1 = you), a multiplayer room is always 2P. Wheel the OPS panel for the variant (locks on Start or the first move, unlocks on host Reset). <strong>FlipChip</strong> before <strong>Start</strong>: top color = Player1/Host color (default Black). On the board: stand on a piece (<strong>blue</strong>), aim a <strong>green sphere</strong> to land or a <strong>green circle</strong> to capture (aim brightens green), <kbd>RMB</kbd> to pend (<strong>orange</strong>), <kbd>LMB</kbd> to commit, <kbd>Backspace</kbd> to cancel. <kbd>Tab</kbd> opens <strong>Quick2DCheckersBoard</strong> — a 2D display of the 3D board, not a second control scheme. Aim the far sphere to take a whole jump chain; once a chain starts you must finish it.</li>
         <li><strong>BaffleShots</strong> — stand on the yellow grid at Nav OPS. Nav Plan randomizes fleet (+ Repulse Mines if on); <kbd>RMB</kbd> drag ships or mines in setup. Classic hides <strong>Group?</strong> / <strong>Ship?</strong> until a group sinks (Group Sink stays on). Hits are orange until sunk, then red. A hit mine <strong>repulses</strong> the shot back — attacker repairs and skips a turn, opponent gets a bonus shot. Game over reveals leftover ships/mines. <strong>2P Confirm:</strong> host first → Waiting… then Start; guest first → host button is Start.</li>
-        <li><strong>Pool cue</strong> — walk onto the cue to shoot (wheel = power, <kbd>LMB</kbd> = stroke); <kbd>Shift</kbd> + ghost after a cue scratch for ball-in-hand — object balls off the table do not re-spot the cue.</li>
-        <li><strong>Tetris</strong> — Engage → host on South <strong>5s</strong> → Playing. Clamp on a PlayZone block (blue South / red North): stay still <strong>3s</strong> (or immediately if already there). While clamped the cage cannot walk — WASD moves the piece. Jump off to break clamp. Stick/D-Pad or <kbd>A</kbd>/<kbd>D</kbd> move, <kbd>Q</kbd>/<kbd>LB</kbd> · <kbd>E</kbd>/<kbd>RB</kbd> rotate, <kbd>W</kbd>/stick↑ flip, <kbd>C</kbd>/<kbd>Y</kbd> Hold, soft or <kbd>RT</kbd> hard; leftover board stays until Start/Reset. <strong>Spawn:</strong> host South, guest North.</li>
-        <li><strong>ESC</strong> — pause / Game Selection (HUD off); during death or victory, second <kbd>ESC</kbd> returns to the orbit with <strong>Continue</strong> / <strong>Restart</strong>.</li>
+        <li><strong>Pool cue</strong> — walk onto the cue to shoot (wheel = power, <kbd>LMB</kbd> = stroke). A pocketed or off-table cue is <em>Cue scratched</em> when the balls stop; a ball you legally pocketed on that shot still scores (<em>Name sunk … — cue scratched</em>). The placer also sees <em>stand on cue + SHIFT</em>. Object balls off the table do not re-spot the cue.</li>
+        <li><strong>Goto map</strong> — <kbd>F4</kbd> scrolls Otaku Island. A button’s name is the <code>/goto</code> place (<code>SouthParthenonButton</code> is <code>SouthParthenon</code>).</li>
+        <li><strong>Tetris</strong> — Engage → host on South <strong>5s</strong> → Playing. Offline includes Marathon, Sprint, and Ultra. In a room the host wheel is 2-player only. Clamp on a PlayZone block (blue South / red North): stay still <strong>3s</strong> (or immediately if already there). While clamped the cage cannot walk — WASD moves the piece. Jump off to break clamp. Stick/D-Pad or <kbd>A</kbd>/<kbd>D</kbd> move, <kbd>Q</kbd>/<kbd>LB</kbd> · <kbd>E</kbd>/<kbd>RB</kbd> rotate, <kbd>W</kbd>/stick↑ flip, <kbd>C</kbd>/<kbd>Y</kbd> Hold, soft or <kbd>RT</kbd> hard; leftover board stays until Start/Reset. <strong>Spawn:</strong> host South, guest North.</li>
+        <li><strong>Ray Racer</strong> — the deck is weapons-free. The host and the first three others ride; anyone else spectates (<strong>Previous</strong> / <strong>Escaper</strong> / <strong>Next</strong>). A green <strong>READY</strong> button (or <kbd>Enter</kbd> / gamepad <kbd>A</kbd>) starts the countdown; a room waits until every rider has pressed Ready. <kbd>E</kbd> hides Ready and opens <strong>RayRacerOPS</strong>. Then <strong>GRID</strong>, <strong>3</strong>, <strong>2</strong>, <strong>1</strong>, <strong>GO</strong>. Hold gas from <strong>2</strong> through <strong>GO</strong> for a rocket start; gas on the red <strong>3</strong> is a burnout. Opens in third person; <kbd>V</kbd> cycles Normal, Full Screen, Third Person. On the deck, <kbd>1</kbd>–<kbd>5</kbd> are cameras (chase, left, right, front, top) and weapons do not switch. Host mode wheel: <strong>Free Ray</strong> or <strong>Classic Tron</strong> (90-degree turns on even 2-unit lines). Host <strong>Theme</strong> recolors the floor, grid, border, and pillars. Host sky, grid-line, and floor-fade sliders. Your music and bike color. Solo, with the cursor free, right-click a Game Roster bar for that bike’s color. The computer bike is grey with a white ray. A wall, pillar, or beam crashes you. <strong>Continue</strong> uses a remaining life with no new countdown. <strong>Start</strong> / <strong>Reset</strong> / <strong>Restart</strong> begin a fresh round at Ready. <code>/tron</code> is 1 life, <code>/raylives</code> is 3. Off the island, <kbd>E</kbd> mounts or dismounts a Ray Racer bike you have found, and does nothing if you have not found one. On the GamePlane that bike is scale 1.</li>
+        <li><strong>Room chat</strong> — in a Photon room, <kbd>G</kbd> opens the panel. A plain line goes to everyone. <code>@Nick</code> is a private whisper. During hockey, <code>@ATeam</code>, <code>@BTeam</code>, and <code>@team</code> are side chat. <code>/me</code>, <code>/who</code>, <code>:puck:</code>, <code>:wave:</code>, <code>:star:</code>. Host <code>/ban @Nick</code> and <code>/unban @Nick</code>. <code>/ignore</code> is only your chat. The same commands work in the <kbd>F9</kbd> console. An incoming line flashes that rider’s Game Roster bar.</li>
+        <li><strong>Hockey Arena</strong> — eight spots, four a side. Host is Team A captain. Walk to a stand to join. <kbd>E</kbd> inside any arena collider opens <strong>Hockey Arena OPS</strong> (Start, Reset, Fill open seats) and frees the cursor, including during a game. The puck drops onto center ice at face-off. <kbd>LMB</kbd> kicks left, <kbd>RMB</kbd> kicks right, and neither is a straight hit along the nose. Cruise nudges; full speed slaps. A goal toast reads <strong>Red scores for A Team</strong>. The sky board shows <strong>A 1&nbsp;&nbsp;&nbsp;&nbsp;B 0</strong>. Wheels and the net you defend use the captain’s ray color; the body color stays personal. With the cursor free, right-click an <strong>Open</strong> bar to <strong>Activate</strong> a bot, or a bot for <strong>Color</strong> / <strong>Deactivate</strong>. Even game: host plus seven bots. Solo bots are remembered next launch. In a room the host and the first seven others play; the rest spectate. First to 3. Humans can ride out through the nets; bots stay on the ice.</li>
+        <li><strong>ESC</strong> — pause / Game Selection (HUD off); during death or victory, second <kbd>ESC</kbd> returns to the orbit with <strong>Continue</strong> / <strong>Restart</strong>. On the Ray Racer deck, <kbd>ESC</kbd> closes <strong>RayRacerOPS</strong> before it opens Game Selection.</li>
         <li><strong>Lives</strong> — 3 lives; <strong>Continue</strong> respawns; <strong>Restart</strong> after the last life or a victory. <strong>GAME OVER</strong> means the run is finished.</li>
         <li><strong>Ocean landing</strong> — falling into Ocean-tagged water has no fall impact; land and buildings still deal fall damage.</li>
         <li><strong>F11</strong> — Sky Eye camera (not a menu exit).</li>
